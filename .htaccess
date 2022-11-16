@@ -1,0 +1,12 @@
+RewriteEngine On
+RewriteCond %{REQUEST_URI} !^/public/
+RewriteRule ^(.*)$ /public/$1 [L,QSA]
+
+RewriteEngine On
+RewriteCond %{HTTPS} !on
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-SSL} !on
+RewriteCond %{HTTP_HOST} ^londondms\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.londondms\.com$
+RewriteRule ^/?$ "https\:\/\/londondms\.com\/" [R=301,L]

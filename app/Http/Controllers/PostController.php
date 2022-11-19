@@ -237,7 +237,7 @@ class PostController extends Controller
     public function postSingle($slug){
         $post = Post::whereSlug($slug)->first();
         if ( ! $post){
-            abort(404);
+            return redirect('blog');
         }
         $title = $post->title;
         $categories = BlogCategory::where('status',0)->where('is_deleted',0)->get();

@@ -37,7 +37,7 @@
                   
                   <div class="form-group">
                       <label for="country">Country of Residence: </label>
-                      <select onchange="getPhoneCode()" id="select_country" name="country" class="form-control" placeholder="Select Country" data-live-search="true">
+                      <select onchange="getPhoneCode()" id="select_country" name="country" class="form-control get-country-data" placeholder="Select Country" data-live-search="true">
                           <option>Select Country</option>
                           @if(count($countries) > 0)
                               @foreach($countries as $country)
@@ -49,7 +49,7 @@
                   </div>
                   <div class="form-group">
                       <label for="exampleInputEmail1">Contact Number</label>
-                      <input name="phone" type="text" class="form-control" id="select_phone" placeholder="Place your number">
+                      <input name="phone" type="text" class="form-control get-phone-code" id="select_phone" placeholder="Place your number">
                       {!! $errors->has('phone')? '<p class="help-block text-danger">'.$errors->first('phone').'</p>':'' !!}
                     </div>
                   <div class="form-group">

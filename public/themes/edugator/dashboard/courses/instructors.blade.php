@@ -85,10 +85,10 @@
                             <i class="la la-user-circle"></i>
                             <strong>{{$students_count}}</strong> {{__t('students')}}
                         </p>
-                        <p class="instructor-stat-value  mr-3">
+                        {{-- <p class="instructor-stat-value  mr-3">
                             <i class="la la-comments"></i>
                             <strong>{{$author_rating->rating_count}} </strong> {{__t('reviews')}}
-                        </p>
+                        </p> --}}
                     </div>
 
                 </div>

@@ -47,7 +47,7 @@
                     <div class="form-group row {{ $errors->has('country_id') ? ' has-error' : '' }}">
                         
                         <div class="col-md-12">
-                            <select onchange="getPhoneCodeById()" id="select_country" class="form-control" name="country_id" style="border-radius: 20px;" required autofocus>
+                            <select onchange="getPhoneCodeById()" id="select_country" class="form-control get-country-data" name="country_id" style="border-radius: 20px;" required autofocus>
                                 <option>--Select Country--</option>
                                 @foreach ($countries as $country)
                                 <option value="{{ $country->id }}">{{ $country->name }}</option>
@@ -64,7 +64,7 @@
                     <div class="form-group row {{ $errors->has('mobile') ? ' has-error' : '' }}">
                         
                         <div class="col-md-12">
-                            <input placeholder="Mobile" id="select_phone" type="text" class="form-control" name="mobile" value="{{ old('mobile') }}" required autofocus>
+                            <input placeholder="Mobile" id="select_phone" type="text" class="form-control get-phone-code" name="mobile" value="{{ old('mobile') }}" required autofocus>
 
                             @if ($errors->has('mobile'))
                                 <span class="help-block">

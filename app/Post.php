@@ -78,6 +78,20 @@ class Post extends Model
         return $arr[0];
 
     }
+    public static function stringSubstr($string=NULL)
+    {
+        if (! empty($string)) {
+            if (strlen($string) > 27) {
+                $string = substr($string, 0, 30).'...';
+
+                return $string;
+            } else {
+                return $string;
+            }
+        } else {
+            return null;
+        }
+    }
 
 
 }

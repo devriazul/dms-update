@@ -72,11 +72,11 @@ function dashboard_menu(){
             'icon' => '<i class="la la-heart-o"></i>',
             'is_active' => request()->is('dashboard/wishlist*'),
         ],
-        'reviews_i_wrote' => [
-            'name' => __t('reviews'),
-            'icon' => '<i class="la la-star-half-alt"></i>',
-            'is_active' => request()->is('dashboard/reviews-i-wrote*'),
-        ],
+        // 'reviews_i_wrote' => [
+        //     'name' => __t('reviews'),
+        //     'icon' => '<i class="la la-star-half-alt"></i>',
+        //     'is_active' => request()->is('dashboard/reviews-i-wrote*'),
+        // ],
         'my_quiz_attempts' => [
             'name' => __t('my_quiz_attempts'),
             'icon' => '<i class="la la-question-circle-o"></i>',

@@ -18,7 +18,7 @@
                 <strong>Success!</strong> {{ session('contact_success') }}
             </div>
             @endif
-            <div class="col-md-6 p-5">
+            <div class="col-md-6 p-5 course-widget">
               <div class="py-3">
                 <h2>Contact</h2>
             </div>

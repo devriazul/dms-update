@@ -12,13 +12,13 @@
         </div>
     </div>
     <div class="container">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center m-3">
             @if(Session::has('contact_success'))
-            <div class="col-md-12 alert alert-success">
+            <div style="margin-top: 30px;" class="col-md-12 alert alert-success">
                 <strong>Success!</strong> {{ session('contact_success') }}
             </div>
             @endif
-            <div class="col-md-6 p-5">
+            <div class="col-md-6 py-3 course-widget">
                 <form action="{{ URL::to('contact-store') }}" method="post" id="createPostForm" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
@@ -34,8 +34,8 @@
                     
                     <div class="form-group">
                         <label for="country">Country of Residence: </label>
-                        <select onchange="getPhoneCode()" id="select_country" name="country" class="form-control get-country-data">
-                            <option>Select Country</option>
+                        <select onchange="getPhoneCode()" id="" name="country" class="form-control get-country-data">
+                            <option value="">Select Country</option>
                             @if(count($countries) > 0)
                                 @foreach($countries as $country)
                                     <option value="{{ $country->name }}">{{ $country->name }}</option>
@@ -83,7 +83,8 @@
                     {{-- <div class="login-left-box-img">
                         <img src="{{theme_url('images/contact-us.webp')}}" alt="login-image">
                     </div> --}}
-                    <div style="width: 100%"><iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=11%20Beaufort%20Court,%20Admirals%20Way,%20Canary%20Wharf,%20London%20United%20Kingdom%20E14%209XL+(London%20School%20of%20marketing)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.maps.ie/distance-area-calculator.html">measure area map</a></iframe></div>
+                    <div style="width: 100%">
+                        <iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=11%20Beaufort%20Court,%20Admirals%20Way,%20Canary%20Wharf,%20London%20United%20Kingdom%20E14%209XL+(London%20School%20of%20marketing)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.maps.ie/distance-area-calculator.html">measure area map</a></iframe></div>
                 </div>
             </div>
         </div>

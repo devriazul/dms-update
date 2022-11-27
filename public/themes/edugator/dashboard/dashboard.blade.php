@@ -44,10 +44,10 @@
                     <span><i class="la la-star-half-alt"></i> </span>
                 </div>
 
-                <div class="card-info">
+                {{-- <div class="card-info">
                     <div class="text-value"><h4>{{$myReviewsCount}}</h4></div>
                     <div>My Reviews</div>
-                </div>
+                </div> --}}
             </div>
         </div>
 

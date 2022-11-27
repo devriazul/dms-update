@@ -100,7 +100,7 @@
     <div class="container my-4">
 
         <div class="row">
-            <div class="col-md-10 offset-md-1">
+            <div class="col-md-12">
 
 
                 <div class="course-details-wrap">
@@ -112,7 +112,7 @@
                             <div class="col-md-6">
 
                                 <div class="course-whats-included-box course-widget p-4">
-                                    <h4 class="mb-4">{{__t('whats_included')}}</h4>
+                                    <h4 class="mb-4">Course Summary</h4>
 
                                     @php
                                         $lectures_count = $course->lectures->count();
@@ -120,35 +120,38 @@
                                         $attachments_count = $course->contents_attachments->count();
                                     @endphp
 
-                                    <ul class="p-3">
+                                    <ul>
                                         
-                                        <li> <i class="la la-clock"></i> {{$course->course_duration}} </li>
+                                        {{-- <li class="pb-1"> <b><i class="la la-trophy"></i> Awarding Body: Qualifi / OTHM / ATHE </b></li> --}}
+                                        <li class="pb-1"> <b><i class="la la-clock"></i> Duration: {{$course->course_duration}} </b></li>
                                         
 
                                         {{-- <li> <i class="la la-book"></i> {{$lectures_count}} {{__t('lectures')}} </li> --}}
                                         @if($assignments_count)
-                                            <li> <i class="la la-tasks"></i> {{$assignments_count}} {{__t('assignments')}}</li>
+                                            <li class="pb-1"><b> <i class="la la-tasks"></i> {{$assignments_count}} {{__t('assignments')}}</b></li>
                                         @endif
                                         @if($attachments_count)
-                                            <li> <i class="la la-file-download"></i> {{$attachments_count}} downloadable resources </li>
+                                            <li class="pb-1"> <b><i class="la la-file-download"></i> {{$attachments_count}} downloadable resources</b> </li>
                                         @endif
 
-                                        <li> <i class="la la-mobile"></i> Access on tablet and phone </li>
-                                        <li> <i class="la la-certificate"></i> Certificate of completion </li>
+                                        <li class="pb-1"> <b><i class="la la-mobile"></i> Mode of Study: Online or Blended Learning  </b> </li>
+                                        <li class="pb-1"> <b><i class="la la-book"> </i> Total Credit: 60Cr -120 Cr  </b> </li>
+                                        <li class="pb-1"> <b><i class="la la-table"> </i> Level: RQF – 3  </b> </li>
+                                        {{-- <li class="pb-2"> <b><i class="la la-certificate"></i> Certificate of completion</b> </li> --}}
+                                        <li class="pb-1"> <b><i class="la la-money"></i> Tuition fees: £1990 (50% Discount £995) </b> </li>
+                                        <li class=""> <b><i class="la la-bank"></i> Initial Payment: £150 </b> </li>
                                     </ul>
                                 </div>
 
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-6 text-right " >
 
                                 @if($course->video_info())
                                     @include(theme('video-player'), ['model' => $course, 'video_caption' => __t('preview')])
                                 @else
-                                    <img src="{{media_image_uri($course->thumbnail_id)->image_md}}" class="img-fluid" />
+                                    <img src="{{media_image_uri($course->thumbnail_id)->image_md}}" class="img-fluid course-widget"/>
                                 @endif
-
-
                             </div>
                         </div>
 
@@ -158,7 +161,7 @@
 
                     @if($course->benefits_arr)
                         <div class="course-widget mb-4 p-4">
-                            <h4 class="mb-4">{{__t('what_learn')}}</h4>
+                            <h4 class="mb-4">Learning Outcomes </h4>
 
                             <div class="content-expand-wrap">
                                 <div class="content-expand-inner">
@@ -175,9 +178,9 @@
                         </div>
                     @endif
 
-                    @if($course->sections->count())
+                    {{-- @if($course->sections->count())
 
-                        {{-- <div class="course-curriculum-header d-flex mt-5">
+                        <div class="course-curriculum-header d-flex mt-5">
                             <h4 class="mb-4 course-curriculum-title flex-grow-1">{{__t('course_curriculum')}}</h4>
 
                             <p id="expand-collapse-all-sections">
@@ -187,7 +190,7 @@
 
                             <p class="ml-3 course-total-lectures-info">{{$course->total_lectures}} {{__t('lectures')}}</p>
                             <p class="ml-3 mr-3 course-runtime-info">{{seconds_to_time_format($course->total_video_time)}}</p>
-                        </div> --}}
+                        </div>
 
                         <div class="course-curriculum-wrap mb-4">
 
@@ -255,12 +258,13 @@
                             @endforeach
 
                         </div>
-                    @endif
+                    @endif --}}
 
                     @if($course->requirements_arr)
-                        <h4 class="mb-4">{{__t('requirements')}}</h4>
+                        
 
                         <div class="course-widget mb-4 p-4">
+                            <h4 class="mb-4">Entry Requirements </h4>
                             <ul class="benefits-items row">
                                 @foreach($course->requirements_arr as $requirement)
                                     <li class="col-6 benefit-item d-flex mb-2">
@@ -272,12 +276,26 @@
                         </div>
                     @endif
 
+                    <div class="course-widget mb-4 p-4">
+                        <h4 class="mb-4">Proggression </h4>
+                        <ul class="benefits-items row">
+                                <li class="col-6 benefit-item d-flex mb-2">
+                                    <i class="la la-certificate"></i>
+                                    <span class="benefit-item-text ml-2">BA (Hons) Business Management</span>
+                                </li>
+                                <li class="col-6 benefit-item d-flex mb-2">
+                                    <i class="la la-certificate"></i>
+                                    <span class="benefit-item-text ml-2">  BA (Hons) Business Studites  </span>
+                                </li>
+                        </ul>
+                    </div>
+
                     @if($course->description)
-                        <div class="course-description mt-4 mb-5">
+                        <div class="course-widget mb-4 p-4 course-description mt-4 mb-5">
                             <h4 class="mb-4 course-description-title">{{__t('description')}}</h4>
 
                             <div class="content-expand-wrap">
-                                <div class="content-expand-inner">
+                                <div class="content-expand-inner p-4">
                                     {!! $course->description !!}
                                 </div>
                             </div>
@@ -320,10 +338,10 @@
                                         <i class="la la-user-circle"></i>
                                         <strong>{{$students_count}}</strong> {{__t('students')}}
                                     </p>
-                                    <p class="instructor-stat-value mb-1">
+                                    {{-- <p class="instructor-stat-value mb-1">
                                         <i class="la la-comments"></i>
                                         <strong>{{$instructor_rating->rating_count}} </strong> {{__t('reviews')}}
-                                    </p>
+                                    </p> --}}
                                 </div>
 
                                 <div class="instructor-details">
@@ -353,7 +371,7 @@
                     </div>
 
 
-                    @if($course->reviews->count())
+                    {{-- @if($course->reviews->count())
                         <div id="course-ratings-wrap">
                             <h4 class="mb-4">{{__t('student_feedback')}}</h4>
 
@@ -411,7 +429,7 @@
                                 @endforeach
                             </div>
                         </div>
-                    @endif
+                    @endif --}}
 
                 </div>
 

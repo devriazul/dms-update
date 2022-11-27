@@ -371,6 +371,18 @@
       })(jQuery);
     </script>
     <script>
+      function getPhoneCodeFromHeader(){
+				var country_name = $('.get-country-data-header').val();
+				$.get("{{ URL::to('get-code-by-country') }}/"+country_name,function(data,status){
+					if(data['result']['key']===101){
+						alert(data['result']['val']);
+					}
+					if(data['result']['key']===200){
+						console.log(data['result']['val']);
+						$('.get-phone-code-header').val(data['result']['val']);
+					}
+				});
+			}
       function getPhoneCode(){
 				var country_name = $('.get-country-data').val();
 				$.get("{{ URL::to('get-code-by-country') }}/"+country_name,function(data,status){
@@ -384,14 +396,14 @@
 				});
 			}
       function getPhoneCodeById(){
-				var country_id = $('#select_country').val();
+				var country_id = $('.get-country-data').val();
 				$.get("{{ URL::to('get-code-by-country-id') }}/"+country_id,function(data,status){
 					if(data['result']['key']===101){
 						alert(data['result']['val']);
 					}
 					if(data['result']['key']===200){
 						console.log(data['result']['val']);
-						$('#select_phone').val(data['result']['val']);
+						$('.get-phone-code').val(data['result']['val']);
 					}
 				});
 			}
@@ -414,6 +426,13 @@
           $(".social-button").attr("target","_blank");
       });
     </script>
+    @if(Session::has('check_apply_now_data'))
+    <script>
+      $(document).ready(function(){
+          $('#exampleModal1').modal('show');
+      });
+    </script>
+    @endif
     
 </body>
 </html>

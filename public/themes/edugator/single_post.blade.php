@@ -100,15 +100,17 @@
                         </div>
                     </div>
                     <div class="box-shadow p-3 mb-4">
-                        <label for=""><b>Related Blog</b></label>
+                        <label for=""><b>Recent Blog</b></label>
+                        @foreach($releted_blogs as $releted_blog)
                         <div class="row">
                             <div class="col-md-3">
-                                <img src="https://londondms.com/uploads/images/image_lg/what-is-a-level-3-diploma-in-health-and-social-care.png" alt="" srcset="" class="img-fluid">
+                                <img src="{{$releted_blog->thumbnail_url->image_lg}}" alt="" srcset="" class="img-fluid">
                             </div>
                             <div class="col-md-9">
-                                <p>What Is A Level 3 Diploma <a href="">Read more..</a></p>
+                                <p>{{ App\Post::stringSubstr($releted_blog->title) }} <a href="{{ $releted_blog->url }}">Read more..</a></p>
                             </div>
                         </div>
+                        @endforeach
                     </div>
                     <div class="box-shadow">
                         <div class="blog-author-wrap border p-3">

@@ -12,6 +12,7 @@ use App\Mail\contactMail;
 use Illuminate\Support\Facades\Mail;
 use App\BlogCategory;
 use App\Course;
+use Illuminate\Support\Facades\Validator;
 
 class PostController extends Controller
 {
@@ -241,8 +242,9 @@ class PostController extends Controller
         }
         $title = $post->title;
         $categories = BlogCategory::where('status',0)->where('is_deleted',0)->get();
+        $releted_blogs = Post::where('type','post')->where('id','!=',$post->id)->orderBy('id','desc')->take(4)->get();
         if ($post->type === 'post'){
-            return view(theme('single_post'), compact('title', 'post','categories'));
+            return view(theme('single_post'), compact('title', 'post','categories','releted_blogs'));
         }
         return view(theme('single_page'), compact('title', 'post'));
     }
@@ -301,7 +303,51 @@ class PostController extends Controller
         Mail::to('aiub.tanvir@gmail.com')->send(new contactMail($data));
         Session::flash('success','Thanks for your query!');
         Session::flash('contact_success','Thanks To Connecting with us! We will contact to you very soon!');
-        return redirect()->back();
+        return redirect('contact-us');
+    }
+    //store appy now
+    public function store_apply_now(Request $request){
+        $rules = [
+            'full_name'     => 'required|max:220',
+            'email'   => 'required|email',
+            'phone'   => 'required',
+            'country'   => 'required',
+            'contact_reason'   => 'required',
+            'message'   => 'required',
+        ];
+        //$validate = $this->validate($request, $rules);
+        $validate = Validator::make($request->all(), $rules);
+        if($validate->fails()){
+            Session::flash('check_apply_now_data','200');
+            return redirect('/')
+                 ->withErrors($validate)
+                 ->withInput();
+        }
+        $privacy = '';
+        $is_receiving_info = 0;
+        if($request->has('privacy_policy')){
+            $privacy = 1;
+        }else{
+            $privacy = 0;
+        }
+        
+        $data = [
+            'full_name'             => clean_html($request->full_name),
+            'email'                 => clean_html($request->email),
+            'phone'                 => clean_html($request->phone),
+            'country'               => clean_html($request->country),
+            'contact_reason'        => clean_html($request->contact_reason),
+            'message'               => clean_html($request->message),
+            'datetime'              => time(),
+            'type'                  => 1,
+            'privacy_policy'        => $privacy,
+            'is_receiving_info'     => $is_receiving_info,
+        ];
+        Contact::create($data);
+        Mail::to('aiub.tanvir@gmail.com')->send(new contactMail($data));
+        Session::flash('success','Thanks for your query!');
+        Session::flash('contact_success','Thanks To Connecting with us! We will contact to you very soon!');
+        return redirect('contact-us');
     }
     //get contact list for admin 
     public function getContactList(){
@@ -408,6 +454,17 @@ class PostController extends Controller
     public function sitemap(){
         
         return response()->view(theme('sitemap'))->header('Content-Type', 'text/xml');
+    }
+    public function sitemap_index(){
+        return response()->view(theme('sitemap_index'))->header('Content-Type', 'text/xml');
+    }
+    public function post_sitemap(){
+        $posts = Post::where('status',1)->where('type','post')->get();
+        return response()->view(theme('post_sitemap'),compact('posts'))->header('Content-Type', 'text/xml');
+    }
+    public function course_sitemap(){
+        $courses = Course::where('status',1)->get();
+        return response()->view(theme('course_sitemap'),compact('courses'))->header('Content-Type', 'text/xml');
     }
 
 }

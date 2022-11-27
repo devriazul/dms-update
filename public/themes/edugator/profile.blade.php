@@ -71,10 +71,10 @@
                                     <p class="profile-stat-value">{{$students_count}}</p>
                                 </div>
                             @endif
-                            <div class="profile-stat mr-4">
+                            {{-- <div class="profile-stat mr-4">
                                 <p class="profile-stat-title mb-0">{{__t('reviews')}}</p>
                                 <p class="profile-stat-value">{{$rating->rating_count}}</p>
-                            </div>
+                            </div> --}}
                         </div>
                     @endif
 

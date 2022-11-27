@@ -489,11 +489,16 @@ Route::get('about-us', 'PostController@aboutUs')->name('about');
 Route::get('team', 'PostController@ourTeam')->name('team');
 Route::get('help', 'PostController@helpSupport')->name('help');
 Route::get('sitemap.xml', 'PostController@sitemap')->name('sitemap');
+Route::get('sitemap-index.xml', 'PostController@sitemap_index')->name('sitemap_index');
+Route::get('post-sitemap.xml', 'PostController@post_sitemap')->name('post_sitemap');
+Route::get('course-sitemap.xml', 'PostController@course_sitemap')->name('course_sitemap');
 Route::get('contact-us', 'PostController@contactUs')->name('contact');
 Route::post('contact-store', 'PostController@storeContactus')->name('contact_store');
+Route::post('apply-now', 'PostController@store_apply_now')->name('store_apply_now');
 Route::get('get-code-by-country/{id?}', 'PostController@getPhoneCodeByCountry')->name('get_phone_code_by_country');
 Route::get('get-code-by-country-id/{id?}', 'PostController@getPhoneCodeByCountryId')->name('get_phone_code_by_country_id');
 Route::get('{slug}', 'PostController@postSingle')->name('post');
+//Route::get('post/{id?}', 'PostController@postProxy')->name('post_proxy');
 Route::get('post/{id?}', 'PostController@postProxy')->name('post_proxy');
 
 Route::get('is/viewed/contact/{id?}', 'PostController@isViewedContact')->name('isViewedContact');

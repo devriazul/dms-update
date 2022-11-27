@@ -1,6 +1,8 @@
 @php
     use App\Category;
     $categories = Category::whereStep(0)->with('sub_categories')->orderBy('category_name', 'asc')->get();
+    $countries = App\Country::all();
+    $courses = App\Course::where('status',1)->get();
 @endphp
 
     <!DOCTYPE html>
@@ -284,35 +286,50 @@
                 <div class="modal-body">
                     <div class="row justify-content-center">
                         <div class="col-md-12 p-3">
-                            <form action="" method="post" id="createPostForm" enctype="multipart/form-data">
+                            <form action="{{ route('store_apply_now') }}" method="post" id="createPostForm" enctype="multipart/form-data">
+                                @csrf
                                 <div class="form-group">
                                     <label for="name">Name</label>
                                     <input name="full_name" value="{{ old('full_name') }}" type="text" class="form-control" id="exampleInputName" placeholder="Full Name">
+                                    {!! $errors->has('full_name')? '<p class="help-block text-danger">'.$errors->first('full_name').'</p>':'' !!}
                                   </div>
                                 <div class="form-group">
                                   <label for="exampleInputEmail1">Email address</label>
                                   <input name="email" value="{{ old('email') }}" type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                                  {!! $errors->has('email')? '<p class="help-block text-danger">'.$errors->first('email').'</p>':'' !!}
                                 </div>
                                 
                                 <div class="form-group">
                                     <label for="country">Country of Residence: </label>
-                                    <select onchange="getPhoneCode()" id="select_country" name="country" class="form-control" placeholder="Select Country" data-live-search="true">
+                                    <select onchange="getPhoneCodeFromHeader()" id="select_country" name="country" class="form-control get-country-data-header" placeholder="Select Country" data-live-search="true">
                                         <option>Select Country</option>
+                                        @if(count($countries) > 0)
+                                            @foreach($countries as $country)
+                                                <option value="{{ $country->name }}">{{ $country->name }}</option>
+                                            @endforeach
+                                        @endif
                                     </select>
+                                    {!! $errors->has('country')? '<p class="help-block text-danger">'.$errors->first('country').'</p>':'' !!}
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Contact Number</label>
-                                    <input name="phone" type="text" class="form-control" id="select_phone" placeholder="Place your number">
+                                    <input name="phone" type="text" class="form-control get-phone-code-header" id="select_phone" placeholder="Place your number">
+                                    {!! $errors->has('phone')? '<p class="help-block text-danger">'.$errors->first('phone').'</p>':'' !!}
                                   </div>
                                 <div class="form-group">
                                     <label for="course">Course of Interest</label>
                                     <select name="contact_reason" class="form-control">
                                         <option value="">Select Course</option>
+                                        @foreach ($courses as $course)
+                                            <option value="{{ $course->title }}">{{ $course->title }}</option>
+                                        @endforeach
                                     </select>
+                                    {!! $errors->has('contact_reason')? '<p class="help-block text-danger">'.$errors->first('contact_reason').'</p>':'' !!}
                                 </div>
                                 <div class="form-group">
                                   <label for="exampleInputFile">Your Message</label>
                                   <textarea name="message" class="form-control" name="" id="" cols="30" rows="3"></textarea>
+                                  {!! $errors->has('message')? '<p class="help-block text-danger">'.$errors->first('message').'</p>':'' !!}
                                 </div>
                                 <button type="submit" class="btn btn-primary">Submit</button>
                               </form>

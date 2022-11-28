@@ -147,6 +147,19 @@ a.navbar-brand {
     font-weight: 600;
 }
 
+.dashboard-card {
+    border-radius: 10px;
+    background-image: linear-gradient(#44458d3a, rgba(255, 166, 0, 0.068));
+}
+
+.dashboard-card:hover {
+    background-color: white!important;
+    transform: scale(1.02);
+    transition-duration: 0.5s;
+    cursor: pointer;
+    color: orangered;
+}
+
 .dashboard-card .card-icon i {
     font-size: 42px;
 }
@@ -168,12 +181,11 @@ a.navbar-brand {
 .sidebar-nav {
     position: relative;
     width: 100%;
-    /*background-color: #23282d;*/
 }
 
 .sidebar .sidebar-nav.navbar-collapse {
     padding-right: 0;
-    padding-left: 0;
+    padding: 10px;
 }
 
 .sidebar .sidebar-search {
@@ -182,17 +194,21 @@ a.navbar-brand {
 
 .sidebar ul li a {
     color: #eeeeee;
+    border-radius: 10px;
+    margin: 5px;
 }
 
 .sidebar ul li a.active {
     /*background-color: #0073aa;*/
-    background-color: #888888;
-    color: #ffffff;
+    background-color: #2C2D71;
+    color: white;
 }
 
 .sidebar ul li a:not(.active):hover,
 .sidebar ul li a:not(.active):focus {
-    background-color: #d6e6ee;
+    background-color: orange;
+    transform: scale(1.02);
+    transition-duration: 0.5s;
 }
 
 .sidebar ul li {
@@ -1013,7 +1029,7 @@ Media query
         flex: 0 0 250px;
     }
     #adminmenuback {
-        background-color: #f9f9f9;
+        background-image: linear-gradient(#44458d3a, rgba(255, 166, 0, 0.068));
         position: fixed;
         top: 0;
         bottom: -120px;
@@ -1036,4 +1052,17 @@ Media query
 
 .ck.ck-editor__main>.ck-editor__editable {
     min-height: 200px;
+}
+
+.border-radius-card {
+    border-radius: 10px!important;
+    background-image: linear-gradient(#44458d3a, rgba(255, 166, 0, 0.068))!important;
+}
+
+.border-radius-card:hover {
+    background-color: white!important;
+    transform: scale(1.02);
+    transition-duration: 0.5s;
+    cursor: pointer;
+    color: orangered;
 }

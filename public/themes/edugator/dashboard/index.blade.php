@@ -25,7 +25,7 @@
                     <li><a href="#"> <i class="la la-user-cog"></i> My Profile </a></li>
                     <li><a href="#"> <i class="la la-pencil-square-o"></i> Enrolled Courses </a></li>
                     <li><a href="#"> <i class="la la-heart-o"></i> Wishlist </a></li>
-                    {{-- <li><a href="#"> <i class="la la-star-half-alt"></i> Reviews </a></li> --}}
+                    <!--<li><a href="#"> <i class="la la-star-half-alt"></i> Reviews </a></li>-->
                     <li><a href="#"> <i class="la la-question-circle-o"></i> My Quiz Attempts </a></li>
                     <li><a href="#"> <i class="la la-history"></i> Purchase History </a></li>
                     <li><a href="#"> <i class="la la-clipboard-list"></i> Assignments </a></li>

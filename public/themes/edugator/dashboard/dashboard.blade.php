@@ -13,35 +13,39 @@
 
     <div class="row">
         <div class="col-lg-4 col-md-6">
-            <div class="dashboard-card mb-3 d-flex border p-3 bg-light">
+            <div class="border-radius-card dashboard-card mb-3 d-flex border p-3 bg-light">
                 <div class="card-icon mr-2">
                     <span><i class="la la-user"></i> </span>
                 </div>
 
                 <div class="card-info">
                     <div class="text-value"><h4>{{$enrolledCount}}</h4></div>
-                    <div>Courses Enrolled</div>
+                    <div>My Courses</div>
                 </div>
             </div>
         </div>
-
         <div class="col-lg-4 col-md-6">
-            <div class="dashboard-card mb-3 d-flex border p-3 bg-light">
+            <div class="border-radius-card dashboard-card mb-3 d-flex border p-3 bg-light">
                 <div class="card-icon mr-2">
-                    <span><i class="la la-heart"></i> </span>
+                    <span><i class="la la-medal"></i> </span>
                 </div>
 
                 <div class="card-info">
                     <div class="text-value"><h4>{{$wishListed}}</h4></div>
-                    <div>In Wishlist</div>
+                    <div>Achivements</div>
                 </div>
             </div>
         </div>
 
         <div class="col-lg-4 col-md-6">
-            <div class="dashboard-card mb-3 d-flex border p-3 bg-light">
+            <div class="border-radius-card dashboard-card mb-3 d-flex border p-3 bg-light">
                 <div class="card-icon mr-2">
-                    <span><i class="la la-star-half-alt"></i> </span>
+                    <span><i class="la la-certificate"></i> </span>
+                </div>
+
+                <div class="card-info">
+                    <div class="text-value"><h4>0</h4></div>
+                    <div>My Certificate</div>
                 </div>
 
                 {{-- <div class="card-info">
@@ -53,16 +57,81 @@
 
     </div>
 
-    @if($chartData)
+    <div class="row py-3">
+        <div class="col-md-6">
+            <div class="border-radius-card p-4 bg-white">
+                <h4 class="mb-4">Course Summary</h4>
+                <canvas id="doughnut-chart"></canvas>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="border-radius-card p-4 bg-white">
+                <h4 class="mb-4">Quiz Status</h4>
+                <canvas id="bar-chart"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="border-radius-card p-4 bg-white">
+        <h4 class="mb-4">
+            Assignment Analytics
+        </h4>
+        <canvas id="line-chart" height="100px"></canvas>
+    </div>
+    <div class="border-radius-card mt-3 p-4 bg-white ">
+        <h4 class="mb-4">
+            Cousrse Progress
+        </h4>
+        <div class="d-flex">
+            <div class="col-md-4"><p>Diploma in Business ...</p></div>
+            <div class="col-md-4">
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 30%;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">30%</div>
+                </div>
+            </div>
+            <div class="col-md-4"><a href="">Continue</a></div>
+        </div>
+        <div class="d-flex">
+            <div class="col-md-4"><p>Diploma in Business Inn ...</p></div>
+            <div class="col-md-4">
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 70%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">70%</div>
+                </div>
+            </div>
+            <div class="col-md-4"><a href="">Continue</a></div>
+        </div>
+        <div class="d-flex">
+            <div class="col-md-4"><p>Level 3 Integrated Diploma</p></div>
+            <div class="col-md-4">
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
+                </div>
+            </div>
+            <div class="col-md-4"><a href="">Completed</a></div>
+        </div>
+        <div class="d-flex">
+            <div class="col-md-4"><p>Level 3 Diploma in Intr ...</p></div>
+            <div class="col-md-4">
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
+                </div>
+            </div>
+            <div class="col-md-4"><a href="">Completed</a></div>
+        </div>
+    </div>
+
+
+    {{-- @if($chartData)
         <div class="p-4 bg-white">
-            <h4 class="mb-4">My Earning for for the month ({{date('M')}})</h4>
+            <h4 class="mb-4">My Earning for the month ({{date('M')}})</h4>
 
             <canvas id="ChartArea"></canvas>
         </div>
-    @endif
+    @endif --}}
 
-    @if($purchases->count() > 0)
-        <h4 class="my-4"> {{sprintf(__t('my_last_purchases'), $purchases->count())}} </h4>
+    <div class="border-radius-card mt-3 p-4 bg-white">
+        <h4 class="mb-4"> My Purchase History </h4>
+        @if($purchases->count() > 0)
+        
 
         <table class="table table-striped table-bordered">
 
@@ -108,6 +177,7 @@
             @endforeach
         </table>
     @endif
+    </div>
 
 @endsection
 
@@ -157,6 +227,59 @@
                         display: false
                     }
                 }
+            });
+        </script>
+        <script>
+            new Chart(document.getElementById("doughnut-chart"), {
+                type: 'doughnut',
+                data: {
+                labels: ["Module Released","Module finish on time", "Total Module"],
+                datasets: [
+                    {
+                    label: "Population (millions)",
+                    backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f"],
+                    data: [90, 70, 100]
+                    }
+                ]
+                },
+            });
+        </script>
+        <script>
+            // Bar chart
+            new Chart(document.getElementById("bar-chart"), {
+                type: 'bar',
+                data: {
+                labels: ["August", "September", "October", "November", "December"],
+                datasets: [
+                    {
+                    label: "Quiz Marks",
+                    backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+                    data: [100, 90, 80, 70, 0]
+                    }
+                ]
+                },
+                options: {
+                legend: { display: false },
+                title: {
+                    display: true,
+                    text: 'Month Wise Average Quiz Marks'
+                }
+                }
+            });
+        </script>
+        <script>
+            new Chart(document.getElementById("line-chart"), {
+            type: 'line',
+            data: {
+                labels: ['A1', 'A2', 'A3', 'A4', 'A5', 'A6', 'A7', 'A8', 'A9', 'A10'],
+                datasets: [{ 
+                    data: [100, 90, 80, 50, 70, 0, 87, 52, 30, 20],
+                    label: "Assignment Marks",
+                    borderColor: "#3e95cd",
+                    fill: false
+                }
+                ]
+            },
             });
         </script>
     @endif

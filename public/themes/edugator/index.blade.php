@@ -41,22 +41,21 @@ $categoriesWithCourses = \App\Category::parent()
 
     </div>
 
-    {{-- <div class="dms-box-info-section">
+    <div class="dms-box-info-section py-3">
         <div class="container">
             <div class="row py-4">
                 <div class="col-md-3 col-xs-12">
                     <div class="dms-info-box home-info-box">
                         <img src="{{ theme_url('images/section/Learn-The-Latest-Skills.webp') }}">
-                        <h3 class="info-box-title">Learn A New Skills At Your Own Pace</h3>
-                        <p class="info-box-desc">like business, digital marketing, graphic design, IT, and more.</p>
+                        <h3 class="info-box-title">Learn The Latest Skills</h3>
+                        <p class="info-box-desc">Digital marketing, graphic design, IT, and more.</p>
                     </div>
                 </div>
                 <div class="col-md-3 col-xs-12">
                     <div class="dms-info-box home-info-box">
                         <img src="{{ theme_url('images/section/Get-Ready-For-A-Career.webp') }}">
                         <h3 class="info-box-title">Get Ready For A Career</h3>
-                        <p class="info-box-desc">in high-demand fields like Digital Marketing, Business management, and
-                            more.</p>
+                        <p class="info-box-desc">In high-demand fields like IT, AI and cloud engineering.</p>
                     </div>
                 </div>
                 <div class="col-md-3 col-xs-12">
@@ -76,15 +75,15 @@ $categoriesWithCourses = \App\Category::parent()
 
             </div>
         </div>
-    </div> --}}
-    <div class="dms-box-info-section py-5">
+    </div>
+    {{-- <div class="dms-box-info-section py-5">
         <div class="container">
             <div class="row">
                 <div class="col-md-3 col-xs-12">
                     <div class="home-info-box">
                         <img src="{{theme_url('images/skills.svg')}}">
                         <h3 class="info-box-title">Learn the latest skills</h3>
-                        <p class="info-box-desc">like business, Digital marketing, Graphics Design, IT and more.</p>
+                        <p class="info-box-desc">Digital marketing, Graphics Design, IT and more.</p>
                     </div>
                 </div>
                 <div class="col-md-3 col-xs-12">
@@ -112,7 +111,7 @@ $categoriesWithCourses = \App\Category::parent()
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     {{-- About section --}}
 
@@ -270,7 +269,7 @@ $categoriesWithCourses = \App\Category::parent()
                     <div class="swiper-wrapper">
                         <div class="swiper-slide story-box">
                             <div class="user-text">
-                                <p> Online classes were highly dynamic and exciting. We could practice all skills (listening, reading, speaking and writing). The connection was good, and I did not face any problems. The teacher is very well organized and knowledgeable. He can quickly answer any questions from students clearly and successfully. His classes are exceptionally unique and dynamic. I was generally dazzled by his devotion. </p>
+                                <p> The connection was good, and I did not face any problems. The teacher is very well organized and knowledgeable. He can quickly answer any questions from students clearly and successfully. His classes are exceptionally unique and dynamic.</p>
 
                                 <div class="user-info-t d-flex align-items-center justify-content-between">
                                     <div class="user-info-name-t d-flex align-items-center">
@@ -318,7 +317,7 @@ $categoriesWithCourses = \App\Category::parent()
                         </div>
                         <div class="swiper-slide story-box">
                             <div class="user-text">
-                                <p> I enjoyed this class and the format it was presented in. For me, I learn and retain much more through an online class due to the fact you can do the course. I found it relaxing to turn the work on the assignments and tests at my leisure and when I had the time. I liked that you clearly stated that more internet research might be necessary for some assignments. There is nothing that I disliked about the course. I will be taking another online course from you! </p>
+                                <p> I enjoyed this class and the format it was presented in. For me, I learn and retain much more through an online class due to the fact you can do the course. I found it relaxing to turn the work on the assignments and tests at my leisure and when I had the time.  </p>
 
                                 <div class="user-info-t d-flex align-items-center justify-content-between">
                                     <div class="user-info-name-t d-flex align-items-center">

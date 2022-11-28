@@ -338,10 +338,10 @@
                                         <i class="la la-user-circle"></i>
                                         <strong>{{$students_count}}</strong> {{__t('students')}}
                                     </p>
-                                    {{-- <p class="instructor-stat-value mb-1">
+                                    <p class="instructor-stat-value mb-1">
                                         <i class="la la-comments"></i>
                                         <strong>{{$instructor_rating->rating_count}} </strong> {{__t('reviews')}}
-                                    </p> --}}
+                                    </p>
                                 </div>
 
                                 <div class="instructor-details">
@@ -371,7 +371,7 @@
                     </div>
 
 
-                    {{-- @if($course->reviews->count())
+                    @if($course->reviews->count())
                         <div id="course-ratings-wrap">
                             <h4 class="mb-4">{{__t('student_feedback')}}</h4>
 
@@ -429,7 +429,7 @@
                                 @endforeach
                             </div>
                         </div>
-                    @endif --}}
+                    @endif
 
                 </div>
 

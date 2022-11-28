@@ -156,9 +156,10 @@
               
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav mr-auto">
+                    @if(!request()->is('dashboard*'))
                     <li class="nav-item">
                         <a class="nav-link" href="/"><i class="las la-home"></i> Home</a>
-                    </li>
+                    </li>                    
                     <li class="nav-item">
                         <div class="dropdown">
                             <a class="dropbtn nav-link"><i class="las la-hand-point-right"></i> About</a>
@@ -202,14 +203,17 @@
                             </div>
                           </div>
                     </li>
+                    @endif
                   </ul>
                   <ul class="navbar-nav mr-0 ">
+                    @if(!request()->is('dashboard*'))
                     <li class="nav-item main-nav-right-menu mx-2">
                         <button data-toggle="modal" data-target="#exampleModal" class="btn btn-primary my-2 my-sm-0" type="submit"><i class="la la-search"></i></button>
                     </li>
                     <li class="nav-item main-nav-right-menu mx-2">
                         <button data-toggle="modal" data-target="#exampleModal1" class="btn btn-primary my-2 my-sm-0" type="submit">Apply now</button>
                     </li>
+                    @endif
                     @if (Auth::guest())
                         <li class="nav-item main-nav-right-menu mx-2">
                             <a class=" btn btn-primary my-2 my-sm-0" href="{{route('login')}}"> <i class="la la-sign-in"></i> {{__t('login')}}</a>

@@ -5,10 +5,10 @@
 
 :root {
     --nav-item-color: #191919;
-    --a-color: #216094;
-    --a-hover-color: #218ff6;
-    --btn-theme-primary-bg: #2073d4;
-    --btn-theme-primary-hover-bg: #005bbe;
+    --a-color: #2C2D71;
+    --a-hover-color: orange;
+    --btn-theme-primary-bg: #2C2D71;
+    --btn-theme-primary-hover-bg: orange;
 }
 
 body {
@@ -18,6 +18,7 @@ body {
     line-height: 1.5;
     color: #29303b;
     -webkit-font-smoothing: antialiased;
+    background-color: #F8F9FA;
 }
 
 body.rtl {
@@ -135,6 +136,8 @@ a.nav-btn.disabled:hover {
     color: #fff !important;
     background-color: #2C2D71;
     border-color: #F57E2A;
+    border-radius: 20px !important;
+    transition-duration: 0.3s;
 }
 
 .btn-theme-primary:hover {
@@ -145,6 +148,7 @@ a.nav-btn.disabled:hover {
 .btn-login-outline {
     color: #ffffff;
     border-color: #F57E2A;
+    transition-duration: 0.3s;
 }
 
 .btn-login-outline:hover {
@@ -287,10 +291,13 @@ a.londondms-btn {
     font-size: 18px;
     margin: 15px 0;
     font-family: "Rubik";
+    border-radius: 10px;
 }
 
 a.londondms-btn:hover {
     background: #F57E2A;
+    transition-duration: 0.3s;
+    cursor: pointer;
 }
 
 .about-us-img {
@@ -462,6 +469,9 @@ a.profile-dropdown-toogle:hover {
     border: 1px solid #ccc;
     border-radius: 50%;
     background: #eee;
+    transform: scale(1.02);
+    transition-duration: 0.5s;
+    cursor: pointer;
 }
 
 #miniCartDropDown .badge {
@@ -492,6 +502,7 @@ a.profile-dropdown-toogle:hover {
     border: 1px solid #eeeeee;
     box-shadow: 0 4px 16px rgba(20, 23, 28, 0.25);
     overflow: hidden;
+    border-radius: 10px;
 }
 
 .profile-dropdown-menu .dashboard-menu li a {
@@ -502,6 +513,9 @@ a.profile-dropdown-toogle:hover {
 
 .nav-item-user-profile:hover .profile-dropdown-menu {
     display: block;
+    transform: scale(1.02);
+    transition-duration: 0.5s;
+    cursor: pointer;
 }
 
 .mini-cart-item .mini-cart-body-wrap {
@@ -652,10 +666,13 @@ Home popular courses
     font-size: 14px;
     box-shadow: 0 0 1px 1px rgba(20, 23, 28, 0.1), 0 3px 1px 0 rgba(20, 23, 28, 0.1);
     position: relative;
+    border-radius: 10px;
 }
 
 .course-card:hover {
     box-shadow: 0 2px 8px 2px rgba(20, 23, 28, 0.15);
+    transform: scale(1.02);
+    transition-duration: 0.5s;
 }
 
 .course-card .course-card-img-wrap a {
@@ -672,15 +689,17 @@ Home popular courses
     position: absolute;
     top: 0;
     width: 100%;
+    border-radius: 5px;
 }
 
 .course-card .course-card-img-wrap img {
     width: 100%;
     height: auto;
+    border-radius: 5px;
 }
 
 .course-card .course-card-contents {
-    padding: 10px;
+    padding: 15px;
 }
 
 .course-card a {
@@ -941,6 +960,7 @@ Home popular courses
 .dashboard-menu li a {
     padding: 10px;
     display: block;
+    border-radius: 5px;
 }
 
 .dashboard-menu li {
@@ -949,6 +969,9 @@ Home popular courses
 
 .dashboard-menu li a:hover {
     background-color: #edf0f9;
+    transform: scale(1.02);
+    transition-duration: 0.3s;
+    cursor: pointer;
 }
 
 .dashboard-menu li.active a {
@@ -967,6 +990,35 @@ Home popular courses
 
 .dashboard-section-header i {
     line-height: 1.6;
+}
+
+.user-text {
+    border-radius: 10px!important;
+    box-shadow: 2px 2px 5px #f57f2a42;
+    border: none!important;
+    background-color: white;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.user-text:hover {
+    transform: scale(1.02);
+    transition-duration: 0.5s;
+    cursor: pointer;
+}
+
+.border-radius-card {
+    /* padding: 5px; */
+    border-radius: 10px!important;
+    background-image: linear-gradient(#44458d3a, rgba(255, 166, 0, 0.068))!important;
+}
+
+.border-radius-card:hover {
+    /* border: 0.1px solid orange !important; */
+    background-color: white!important;
+    transform: scale(1.02);
+    transition-duration: 0.5s;
+    cursor: pointer;
 }
 
 .dashboard-card .card-icon i {
@@ -2929,8 +2981,13 @@ button.btn.btn-sm.btn-theme-primary.add-to-cart-btn i {
     text-align: center;
     padding: 15px;
     border-radius: 5px;
-    background-color: #f57f2a15;
-    box-shadow: 2px 2px 5px #bdd7ff;
+    background-color: white;
+    box-shadow: 2px 2px 5px #f57f2a42;
+    cursor: pointer;
+}
+.dms-info-box:hover {
+    transform: scale(1.02);
+    transition-duration: 0.5s;
 }
 .dms-info-box img {
     max-width: 80px;
@@ -3614,6 +3671,7 @@ footer {
     background-color: #f1f1f1;
     min-width: 190px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
     z-index: 1;
 }
 .dropdown-content a {
@@ -3621,9 +3679,15 @@ footer {
     padding: 8px 12px;
     text-decoration: none;
     display: block;
+    margin-top: 2px;
 }
 .dropdown-content a:hover {
-    background-color: #ddd;
+    background-color: #2C2C73;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    color: white!important;
+    border-radius: 10px;
+    transition-duration: .7s;
+    transform: scale(1.002);
 }
 .dropdown:hover .dropdown-content {
     display: block;

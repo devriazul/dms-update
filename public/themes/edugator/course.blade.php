@@ -156,9 +156,6 @@
                         </div>
 
                     </div>
-
-
-
                     @if($course->benefits_arr)
                         <div class="course-widget mb-4 p-4">
                             <h4 class="mb-4">Learning Outcomes </h4>
@@ -178,9 +175,32 @@
                         </div>
                     @endif
 
-                    {{-- @if($course->sections->count())
+                    <div class="course-widget mb-4 p-4">
+                        <h4 class="mb-4"> Units</h4>
+                        <div class="benefits-items row">
+                                <div class="col-6 benefit-item mb-2">
+                                    <h5>Mandatory</h5>
+                                    <ul>
+                                        <li href="">An Introduction to the Business Environment</li>
+                                        <li href="">Business Resources </li>
+                                        <li href="">An Introduction to Marketing </li>
+                                        <li href="">Human Resource Management</li>
+                                    </ul>
+                                </div>
+                                <div class="col-6 benefit-item mb-2">
+                                    <h5>Optional</h5>
+                                    <ul>
+                                        <li href="">Business Communication </li>
+                                        <li href="">Understanding Health and Safety in the Business Workplace  </li>
+                                        <li href="">Recruitment and Selection in Business  </li>
+                                    </ul>
+                                </div>
+                        </div>
+                    </div>
 
-                        <div class="course-curriculum-header d-flex mt-5">
+                    @if($course->sections->count())
+
+                        {{-- <div class="course-curriculum-header d-flex mt-5">
                             <h4 class="mb-4 course-curriculum-title flex-grow-1">{{__t('course_curriculum')}}</h4>
 
                             <p id="expand-collapse-all-sections">
@@ -190,7 +210,7 @@
 
                             <p class="ml-3 course-total-lectures-info">{{$course->total_lectures}} {{__t('lectures')}}</p>
                             <p class="ml-3 mr-3 course-runtime-info">{{seconds_to_time_format($course->total_video_time)}}</p>
-                        </div>
+                        </div> --}}
 
                         <div class="course-curriculum-wrap mb-4">
 
@@ -198,7 +218,7 @@
 
                                 <div id="course-section-{{$section->id}}" class="course-section bg-white border mb-2">
 
-                                    <div class="course-section-header bg-light p-3 border-bottom d-flex">
+                                    <div class="course-widget course-section-header  p-3 border-bottom d-flex">
                                         <span class="course-section-name flex-grow-1 ml-2">
                                             <strong>
                                                 <i class="la la-{{$loop->first ? 'minus' : 'plus'}}"></i>
@@ -206,12 +226,12 @@
                                             </strong>
                                         </span>
 
-                                        <span class="course-section-lecture-count">
+                                        {{-- <span class="course-section-lecture-count">
                                             {{$section->items->count()}} {{__t('lectures')}}
-                                        </span>
+                                        </span> --}}
                                     </div>
 
-                                    <div class="course-section-body" style="display: {{$loop->first ? 'block' : 'none'}};">
+                                    <div class="course-widget course-section-body" style="display: {{$loop->first ? 'block' : 'none'}};">
 
                                         @if($section->items->count())
                                             @foreach($section->items as $item)
@@ -230,11 +250,11 @@
 
                                                     <p class="course-section-item-details d-flex m-0">
                                                         <span class="section-item-preview flex-grow-1">
-                                                            @if($item->is_preview)
+                                                            {{-- @if($item->is_preview)
                                                                 <a href="{{route('single_lecture', [$course->slug, $item->id ] )}}">
                                                                  <i class="la la-eye"></i> {{__t('preview')}}
                                                              </a>
-                                                            @endif
+                                                            @endif --}}
                                                         </span>
 
                                                         @if($item->attachments->count())
@@ -258,7 +278,7 @@
                             @endforeach
 
                         </div>
-                    @endif --}}
+                    @endif 
 
                     @if($course->requirements_arr)
                         

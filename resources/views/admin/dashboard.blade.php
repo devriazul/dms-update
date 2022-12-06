@@ -258,6 +258,7 @@
 
             @else
                 {!! no_data() !!}
+                <div class="text-center"><p>No Payment History Found</p></div>
             @endif
         </div>
     </div>

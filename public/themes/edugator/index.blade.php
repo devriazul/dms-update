@@ -429,6 +429,7 @@ $categoriesWithCourses = \App\Category::parent()
         </div>
     @endif --}}
 
+    
 
 
     {{-- Video section --}}

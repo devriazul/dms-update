@@ -25,28 +25,28 @@ $categoriesWithCourses = \App\Category::parent()
                     <div class="hero__content p-relative z-index-1">
                     <h3 class="hero__title">
                         <span>Access 2700+</span>
-                        <span class="yellow-shape">Online <img src="https://weblearnbd.net/tphtml/educal/educal/assets/img/shape/yellow-bg.png" alt="yellow-shape"> </span> 
+                        <span class="yellow-shape">Online <img src="{{ theme_url('images/yellow-bg.png') }}" alt="yellow-shape"> </span> 
                         Tutorial From Top Instructor.</h3>
                         <p>Meet university,and cultural institutions, who'll share their experience.</p>
-                        <a href="{{route('courses')}}" class="btn btn-theme-primary">view all course</a>
+                        <a href="{{route('courses')}}" class="btn btn-theme-primary">View all course</a>
                     </div>
                 </div>
                 <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
                     <div class="hero__thumb d-flex p-relative">
                     <div class="hero__thumb-shape">
-                        <img class="hero-1-dot" src="https://weblearnbd.net/tphtml/educal/educal/assets/img/shape/hero/hero-1-dot.png" alt="">
-                        <img class="hero-1-circle-3" src="https://weblearnbd.net/tphtml/educal/educal/assets/img/shape/hero/hero-1-circle-3.png" alt="">
-                        <img class="hero-1-circle-4" src="https://weblearnbd.net/tphtml/educal/educal/assets/img/shape/hero/hero-1-circle-4.png" alt="">
+                        <img class="hero-1-dot" src="{{ theme_url('images/hero-1-dot.png') }}" alt="">
+                        <img class="hero-1-circle-3" src="{{ theme_url('images/hero-1-circle-3.png') }}" alt="">
+                        <img class="hero-1-circle-4" src="{{ theme_url('images/hero-1-circle-4.png') }}" alt="">
                     </div>
                     <div class="hero__thumb-big mr-30">
-                        <img src="https://weblearnbd.net/tphtml/educal/educal/assets/img/hero/hero-1.jpg" alt="">
+                        <img src="{{ theme_url('images/DMS Slider image 01.webp') }}" alt="">
                         <div class="hero__quote hero__quote-animation">
                             <span>Tomorrow is our</span>
                             <h4>“When I Grow Up” Spirit Day!</h4>
                         </div>
                     </div>
                     <div class="hero__thumb-sm mt-50 d-none d-lg-block">
-                        <img src="https://weblearnbd.net/tphtml/educal/educal/assets/img/hero/hero-sm-1.jpg" alt="">
+                        <img src="{{ theme_url('images/DMS Slider image 02.webp') }}" alt="">
                     </div>
                     </div>
                 </div>
@@ -161,7 +161,7 @@ $categoriesWithCourses = \App\Category::parent()
         <div class="container">
             <div class="row">
                 <div class="col-md-5 col-xs-12">
-                    <img class="about-us-img img-responsive" src="{{ theme_url('images/about.png') }}" />
+                    <img class="about-us-img img-responsive" src="{{ theme_url('images/about.webp') }}" />
                 </div>
                 <div class="col-md-6 col-xs-12">
                     <div class="about-content-wrapper">
@@ -258,7 +258,7 @@ $categoriesWithCourses = \App\Category::parent()
                                 <div class="swiper-slide">
                                     <div class="category-item-name">
 
-                                        <a href="{{ route('category_view', $category->slug) }}"" class="
+                                        <a href="{{ route('category_view', $category->slug) }}" class="
                                             py-4 d-block text-center text-white mb-3 category-item-link">
                                             <i class="la {{ $category->icon_class }}"></i> {{ $category->category_name }}
                                         </a>
@@ -429,7 +429,6 @@ $categoriesWithCourses = \App\Category::parent()
         </div>
     @endif --}}
 
-    
 
 
     {{-- Video section --}}
@@ -442,13 +441,16 @@ $categoriesWithCourses = \App\Category::parent()
                         <h1>A new era in <br />Online Education</h1>
                     </div>
                 </div>
-                <div class="col-md-6 col-xs-12">
+                <div class="col-md-6 col-xs-12 d-none d-sm-block">
                     <div class="vd-thm-box">
-                        <img src="{{ theme_url('images/video-thm.jpg') }}" alt="video thumnail">
+                        {{-- <img src="{{ theme_url('images/video-thm.jpg') }}" alt="video thumnail">
                         <div class="video-btn-click">
                             <button>
                                 <i class="lar la-play-circle"></i>
                             </button>
+                        </div> --}}
+                        <div>
+                            <iframe width="533" height="300" src="https://www.youtube.com/embed/7LlM3ZjKJbs?rel=0?version=3&autoplay=0&controls=0&&showinfo=0&loop=1" title="At a glance Digital Marketing School" frameborder="0" allow="accelerometer; autoplay; loop=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>
@@ -469,10 +471,11 @@ $categoriesWithCourses = \App\Category::parent()
                         <a href="/topics">Join A Course Now</a>
                     </div>
                 </div>
-                {{-- <div class="col-md-8 col-xs-12">
+                <div class="col-md-8 col-xs-12">
+                    <h3 class="pt-5">Accreditations</h3>
                     <div class="swiper-container university-carousel">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide university-logo">
+                            {{-- <div class="swiper-slide university-logo">
                                 <img src="{{ theme_url('images/university-logo/canterbury-christ-church-university.jpg') }}"
                                     alt="">
                             </div>
@@ -496,12 +499,15 @@ $categoriesWithCourses = \App\Category::parent()
                             </div>
                             <div class="swiper-slide university-logo">
                                 <img src="{{ theme_url('images/university-logo/york_st_john_logo-250x120.jpg') }}" alt="">
+                            </div> --}}
+                            <div class="swiper-slide university-logo">
+                                <img src="https://pbs.twimg.com/media/CaTfTjIWAAAJjC0.png" alt="">
                             </div>
 
                         </div>
                     </div>
 
-                </div> --}}
+                </div>
             </div>
         </div>
     </div>

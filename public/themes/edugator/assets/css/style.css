@@ -240,6 +240,11 @@ a#miniCartDropDown {
 .about-us-img {
     max-width: 380px;
     width: 100%;
+    max-width: 380px;
+    /* border: 4px solid #F57E2A; */
+    /* border-top-left-radius: 52%; */
+    border-radius: 10px;
+    box-shadow: 3px 5px 10px #F57E2A;
 }
 
 .about-content-wrapper h1 {
@@ -287,25 +292,19 @@ a.londondms-btn {
     display: inline-block;
     background: #2C2D71;
     color: #fff;
-    padding: 10px 25px;
-    font-size: 18px;
-    margin: 15px 0;
+    padding: 7px 20px;
+    font-size: 15px;
+    margin: 25px 0;
     font-family: "Rubik";
-    border-radius: 10px;
+    border-radius: 50px;
+    border: 1px solid #F57E2A;
 }
 
 a.londondms-btn:hover {
     background: #F57E2A;
     transition-duration: 0.3s;
     cursor: pointer;
-}
-
-.about-us-img {
-    max-width: 380px;
-    border: 4px solid #F57E2A;
-    border-top-left-radius: 52%;
-    border-bottom-left-radius: 3%;
-    border-bottom-right-radius: 3%;
+    border: 1px solid #2C2D71;
 }
 
 .about-info-counter {
@@ -662,7 +661,7 @@ Home popular courses
 }
 
 .course-card {
-    background-color: #ffffff;
+    background-color: #EBF3FF;
     font-size: 14px;
     box-shadow: 0 0 1px 1px rgba(20, 23, 28, 0.1), 0 3px 1px 0 rgba(20, 23, 28, 0.1);
     position: relative;
@@ -674,6 +673,7 @@ Home popular courses
     transform: scale(1.02);
     transition-duration: 0.5s;
     overflow: hidden;
+    background-color: #ffffff;
 }
 
 .course-card .course-card-img-wrap a {
@@ -997,7 +997,7 @@ Home popular courses
     border-radius: 10px!important;
     box-shadow: 2px 2px 5px #f57f2a42;
     border: none!important;
-    background-color: white;
+    background-color: #EBF3FF;
     border-radius: 10px;
     margin: 5px;
 }
@@ -1006,6 +1006,7 @@ Home popular courses
     transform: scale(1.02);
     transition-duration: 0.5s;
     cursor: pointer;
+    background-color: white;
 }
 
 .border-radius-card {
@@ -2101,12 +2102,10 @@ span.quiz-progress-number.active {
 
 .category-item-name a:hover:before {
     content: "";
-    background: #000000;
     height: 100%;
     width: 100%;
     top: 0;
     left: 0;
-    opacity: 0.3;
     position: absolute;
 }
 
@@ -2782,6 +2781,14 @@ button.btn.btn-sm.btn-theme-primary.add-to-cart-btn i {
     border-radius: 10px;
     min-height: 160px;
 }
+.category-item-name a:hover {
+    border: 1px solid #F57E2A;
+    border-radius: 10px;
+    min-height: 160px;
+    color: #2C2D71!important;
+    background-color: #fff;
+    transition-duration: 0.5s;
+}
 .insctructor-img img {
     max-width: 100%;
 }
@@ -2982,13 +2989,14 @@ button.btn.btn-sm.btn-theme-primary.add-to-cart-btn i {
     text-align: center;
     padding: 15px;
     border-radius: 5px;
-    background-color: white;
+    background-color: #EBF3FF;
     box-shadow: 2px 2px 5px #f57f2a42;
     cursor: pointer;
 }
 .dms-info-box:hover {
     transform: scale(1.02);
     transition-duration: 0.5s;
+    background-color: white;
 }
 .dms-info-box img {
     max-width: 80px;
@@ -3655,10 +3663,13 @@ footer {
     background-color: #2C2D71!important;
     color: white!important;
     border-radius: 50px;
+    border: 1px solid #F57E2A;
 }
 .btn-primary:hover {
     background-color: #F57E2A!important;
     color: white!important;
+    border: 1px solid #2C2D71;
+    transition-duration: .5s;
 }
 
 /* dropdown menu css  */

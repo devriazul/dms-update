@@ -333,7 +333,7 @@
                 {
                 label: "Population (millions)",
                 backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f"],
-                data: [90, 70, 100]
+                data: [{{ $total_data }}]
                 }
             ]
             },
@@ -344,12 +344,12 @@
         new Chart(document.getElementById("bar-chart"), {
             type: 'bar',
             data: {
-            labels: ["August", "September", "October", "November", "December"],
+            labels: [@php echo $month_data; @endphp],
             datasets: [
                 {
                 label: "Total Sales",
-                backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
-                data: [1000, 900, 800, 700, 00]
+                backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850","#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+                data: [{{ $earning_data }}]
                 }
             ]
             },
@@ -366,25 +366,25 @@
         new Chart(document.getElementById("line-chart"), {
         type: 'line',
         data: {
-            labels: ["March","April","May","June","July","August", "September", "October", "November", "December"],
+            labels: [@php echo $month_data; @endphp],
             datasets: [{ 
-                data: [86,11,10,16,17,11,33,21,83,47],
+                data: [{{ $instructor_data }}],
                 label: "Instructor",
                 borderColor: "#3e95cd",
                 fill: false
             }, { 
-                data: [28,35,41,50,63,80,94,14,37,52],
+                data: [{{ $course_data }}],
                 label: "Course",
                 borderColor: "#8e5ea2",
                 fill: false
             }, { 
-                data: [16,17,78,90,20,76,40,54,67,73],
+                data: [{{ $student_data }}],
                 label: "Student",
                 borderColor: "#3cba9f",
                 fill: false
             }, { 
-                data: [40,20,10,16,24,38,74,17,50,78],
-                label: "Certification",
+                data: [{{ $enrole_course_data }}],
+                label: "Enrole Course",
                 borderColor: "#e8c3b9",
                 fill: false
             }

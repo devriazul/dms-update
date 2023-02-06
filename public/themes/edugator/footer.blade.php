@@ -10,7 +10,7 @@
                     <div class="footer-widget-wrap">
                         <h4>About US</h4>
                         <p class="footer-about-us-desc">
-                            London DMS is a online learning platform that connect instructors with Students globally. instructors create high quality course and present them into super easy way
+                            Digital Marketing School is a online learning platform that connect instructors with Students globally. instructors create high quality course and present them into super easy way
                         </p>
                         <p class="footer-social-icon-wrap">
                             <a href="https://www.facebook.com/londondms"><i class="la la-facebook"></i> </a>
@@ -29,10 +29,10 @@
                             11 Beaufort Court, Admirals Way, Canary Wharf, London United Kingdom E14 9XL
                         </p>
 
-                        <p class="mb-0"> Tel: <a href="tel:+442045171310">+442045171310</a>  
+                        <p class="mb-0"> Tel: <a href="tel:0204 5171 310">0204 5171 310</a>  
                         </p>
                         <p class="mb-0">
-                            <a href="mailto: info@londondms.com">info@londondms.com</a>  </p>
+                            <a href="mailto: info@londondms.com">Email: info@londondms.com</a>  </p>
                     </div>
                 </div>
 

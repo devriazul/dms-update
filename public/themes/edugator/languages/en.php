@@ -2,7 +2,7 @@
 
 return [
     'home'                          => 'Home',
-    'home_page_title'               => 'Build skills by talking online courses, at anytime, from anywhere',
+    'home_page_title'               => 'Home',
     'login'                         => 'Log In',
     'signup'                        => 'Sign Up',
     'register'                      => 'Register',

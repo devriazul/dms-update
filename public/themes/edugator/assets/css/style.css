@@ -665,13 +665,13 @@ Home popular courses
     font-size: 14px;
     box-shadow: 0 0 1px 1px rgba(20, 23, 28, 0.1), 0 3px 1px 0 rgba(20, 23, 28, 0.1);
     position: relative;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .course-card:hover {
     box-shadow: 0 2px 8px 2px rgba(20, 23, 28, 0.15);
     transform: scale(1.02);
-    transition-duration: 0.5s;
+    transition: 0.5s ease-out 100ms;
     overflow: hidden;
     background-color: #ffffff;
 }
@@ -683,10 +683,10 @@ Home popular courses
 
 .course-card:hover .course-card-img-wrap a:before {
     content: "";
-    background: #3a78ff;
+    /* background: #3a78ff; */
     height: 100%;
     left: 0;
-    opacity: 0.2;
+    /* opacity: 0.2; */
     position: absolute;
     top: 0;
     width: 100%;
@@ -696,7 +696,7 @@ Home popular courses
 .course-card .course-card-img-wrap img {
     width: 100%;
     height: auto;
-    border-radius: 5px;
+    border-radius: 5px 5px 0px 0px;
 }
 
 .course-card .course-card-contents {

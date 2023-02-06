@@ -7,6 +7,9 @@ use App\Withdraw;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\User;
+use App\Earning;
+use App\CourseUser;
 
 class AdminController extends Controller
 {
@@ -61,8 +64,116 @@ class AdminController extends Controller
             //$formatDate = date('d', strtotime($key));
             $chartData[$formatDate] = $salesCount ? $salesCount : 0;
         }
-
-        return view('admin.dashboard', compact('title', 'chartData'));
+        //craete total course, user, instructor
+        $toral_course = Course::where('status',1)->count();
+        $toral_instructor = User::where('user_type','instructor')->count();
+        $toral_student = User::where('user_type','student')->count();
+        $total_data = $toral_course.','.$toral_instructor.','.$toral_student;
+        //craete month wise earning 
+        $datayear = array();
+        for ($i = 11; $i >= 0; $i--) {
+            $month = Carbon::today()->startOfMonth()->subMonth($i);
+            $year = Carbon::today()->startOfMonth()->subMonth($i)->format('Y');
+            $monthdata = Carbon::today()->startOfMonth()->subMonth($i)->format('m');
+            array_push($datayear, array(
+                'month' => $month->monthName,
+                'year' => $year,
+                'monthdata'=>$monthdata,
+                'earnings'=>Earning::where('payment_status','success')->whereYear('created_at',$year)->whereMonth('created_at',$monthdata)->sum('amount'),
+                'count_instructor'=>User::where('user_type','instructor')->whereYear('created_at',$year)->whereMonth('created_at',$monthdata)->count(),
+                'count_student'=>User::where('user_type','student')->whereYear('created_at',$year)->whereMonth('created_at',$monthdata)->count(),
+                'count_course'=>Course::where('status',1)->whereYear('created_at',$year)->whereMonth('created_at',$monthdata)->count(),
+                'enrole_course'=>CourseUser::whereYear('added_at',$year)->whereMonth('added_at',$monthdata)->count(),
+            ));
+        }
+        $month_data = '';
+        $earning_data = '';
+        $instructor_data = '';
+        $student_data = '';
+        $course_data = '';
+        $enrole_course_data = '';
+        $last_month_el = end($datayear);
+        foreach($datayear as $row){
+            if($row['month']){
+                if($last_month_el==$row){
+                    $month_data .= '"'.$row['month'].'"';
+                }else{
+                    $month_data .= '"'.$row['month'].'"'.',';
+                }
+            }
+            if($row['earnings'] && empty($row['earnings'])){
+                if($last_month_el==$row){
+                    $earning_data .= 0.0;
+                }else{
+                    $earning_data .= 0.0 .',';
+                }
+            }else{
+                if($last_month_el==$row){
+                    $earning_data .= $row['earnings'];
+                }else{
+                    $earning_data .= $row['earnings'] .',';
+                }
+            }
+            //instructor data
+            if($row['count_instructor'] && empty($row['count_instructor'])){
+                if($last_month_el==$row){
+                    $instructor_data .= 0.0;
+                }else{
+                    $instructor_data .= 0.0 .',';
+                }
+            }else{
+                if($last_month_el==$row){
+                    $instructor_data .= $row['count_instructor'];
+                }else{
+                    $instructor_data .= $row['count_instructor'].',';
+                }
+            }
+            //student data
+            if($row['count_student'] && empty($row['count_student'])){
+                if($last_month_el==$row){
+                    $student_data .= 0.0;
+                }else{
+                    $student_data .= 0.0 .',';
+                }
+            }else{
+                if($last_month_el==$row){
+                    $student_data .= $row['count_student'];
+                }else{
+                    $student_data .= $row['count_student'].',';
+                }
+            }
+            //course data
+            if($row['count_course'] && empty($row['count_course'])){
+                if($last_month_el==$row){
+                    $course_data .= 0.0;
+                }else{
+                    $course_data .= 0.0 .',';
+                }
+            }else{
+                if($last_month_el==$row){
+                    $course_data .= $row['count_course'];
+                }else{
+                    $course_data .= $row['count_course'].',';
+                }
+            }
+            //enrole course data
+            if($row['enrole_course'] && empty($row['enrole_course'])){
+                if($last_month_el==$row){
+                    $enrole_course_data .= 0.0;
+                }else{
+                    $enrole_course_data .= 0.0 .',';
+                }
+            }else{
+                if($last_month_el==$row){
+                    $enrole_course_data .= $row['enrole_course'];
+                }else{
+                    $enrole_course_data .= $row['enrole_course'].',';
+                }
+            }
+            
+        }
+        //echo $month_data;exit();
+        return view('admin.dashboard', compact('title', 'chartData','total_data','month_data','earning_data','instructor_data','student_data','course_data','enrole_course_data'));
     }
 
     /**

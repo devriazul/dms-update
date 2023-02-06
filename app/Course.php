@@ -133,9 +133,9 @@ class Course extends Model
         }
 
         $completed_course = (array) $user->get_option('completed_courses');
-        return (int) array_get($completed_course, $this->id.".percent");
+        //return (int) array_get($completed_course, $this->id.".percent");
 
-        /*
+        
         $total_contents = (int) Content::whereCourseId($this->id)->count();
         $total_completed = (int) Complete::whereUserId($user->id)->whereCourseId($this->id)->count();
 
@@ -145,7 +145,7 @@ class Course extends Model
 
         return (int) number_format(($total_completed * 100 ) / $total_contents);
 
-        */
+        
     }
 
     public function getBenefitsArrAttribute(){
@@ -401,6 +401,19 @@ class Course extends Model
         $dripItems['contents'] = array_unique($dripContentIds);
 
         return $dripItems;
+    }
+    public static function stringSubstr($string=NULL){
+        if (! empty($string)) {
+            if (strlen($string) > 27) {
+                $string = substr($string, 0, 27).'...';
+
+                return $string;
+            } else {
+                return $string;
+            }
+        } else {
+            return null;
+        }
     }
 
 }

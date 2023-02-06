@@ -19,14 +19,8 @@
                 <img src="{{theme_url('images/about.webp')}}" alt="" srcset="" width="300px">
             </div>
             <div class="col-md-8">
-                <p>
-                    <b>Digital Marketing School</b> offers a wide range of digital marketing, business management, health and social care online courses covering all aspects you need to advance your career. Our programmes are developed by expert instructors who will teach students new skills that can enhance their careers.
-                </p>
-                <p>
-                    The student can study our courses online whenever and wherever they are, and it comes with an easy understanding of all lesson details with full support from tutors.
-                </p> 
-                <p>
-                    As a result, t is a learning opportunity with an advanced level of knowledge and career-focused skills. Digital Marketing School is an online learning platform that connects expert instructors with students in the UK and globally.
+                <p class="pt-3">
+                    <b>Digital Marketing School</b> offers a wide range of Digital Marketing, Business Management, Health and Social care online courses covering all aspects you need to advance your career. <br> <br> Our programmes are developed by expert instructors who will teach students new skills that can enhance their careers. The student can study our courses online whenever and wherever they are, and it comes with an easy understanding of all lesson details with full support from tutors. <br> <br> As a result, it is a learning opportunity with an advanced level of knowledge and career-focused skills. Digital Marketing School is an online learning platform that connects expert instructors with students in the UK and globally.
                 </p>
             </div>
         </div>
@@ -49,7 +43,7 @@
         </div>
         <div class="row px-3 py-5">
             <div class="col-md-4 text-center pt-5 d-xs-none">
-                <img src="https://invictusinternationalschool.com/images/vission.png" alt="" srcset="" width="350px">
+                <img src="https://www.htcapacitors.net/assets/img/Vision.png" alt="" srcset="" width="350px">
             </div>
             <div class="col-md-8">
                 <div>

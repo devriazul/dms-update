@@ -151,6 +151,7 @@ Route::group(['prefix' => 'gateway-ipn'], function () {
 
 Route::group(['prefix' => 'dashboard', 'middleware' => ['auth']], function () {
     Route::get('/', 'DashboardController@index')->name('dashboard');
+    
 
     /**
      * Only instructor has access in this group
@@ -503,3 +504,8 @@ Route::get('post/{id?}', 'PostController@postProxy')->name('post_proxy');
 
 Route::get('is/viewed/contact/{id?}', 'PostController@isViewedContact')->name('isViewedContact');
 Route::get('delete/contact/{id?}', 'PostController@deleteContact')->name('deleteContact');
+
+//Route::get('blog/{id?}', 'PostController@blog')->name('blog');
+
+Route::get('preview/certificate/portal/{id?}', 'DashboardController@preview_certificate');
+Route::get('verify/certificate/{id?}/{slud?}', 'DashboardController@verify_certificate');

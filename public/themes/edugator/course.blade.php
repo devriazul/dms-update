@@ -174,29 +174,19 @@
                             </div>
                         </div>
                     @endif
-
+                    @if($course->sections->count())
                     <div class="course-widget mb-4 p-4">
                         <h4 class="mb-4"> Units</h4>
                         <div class="benefits-items row">
                                 <div class="col-6 benefit-item mb-2">
-                                    <h5>Mandatory</h5>
-                                    <ul>
-                                        <li href="">An Introduction to the Business Environment</li>
-                                        <li href="">Business Resources </li>
-                                        <li href="">An Introduction to Marketing </li>
-                                        <li href="">Human Resource Management</li>
-                                    </ul>
+                                    {!! $course->mandatory !!}
                                 </div>
                                 <div class="col-6 benefit-item mb-2">
-                                    <h5>Optional</h5>
-                                    <ul>
-                                        <li href="">Business Communication </li>
-                                        <li href="">Understanding Health and Safety in the Business Workplace  </li>
-                                        <li href="">Recruitment and Selection in Business  </li>
-                                    </ul>
+                                    {!! $course->optional !!}
                                 </div>
                         </div>
                     </div>
+                    @endif
 
                     @if($course->sections->count())
 

@@ -171,6 +171,7 @@ class AuthController extends Controller
 
         try {
             Mail::to($email)->send(new SendPasswordResetLink($user));
+            return redirect()->back()->with('success', 'Reset Password Link Send To Your Email Address!');
         }catch (\Exception $e){
             return back()->with('error', $e->getMessage());
         }

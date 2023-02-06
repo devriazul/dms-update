@@ -23,11 +23,12 @@ $categoriesWithCourses = \App\Category::parent()
             <div class="row align-items-center">
                 <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
                     <div class="hero__content p-relative z-index-1">
-                    <h3 class="hero__title">
-                        <span>Access 2700+</span>
-                        <span class="yellow-shape">Online <img src="{{ theme_url('images/yellow-bg.png') }}" alt="yellow-shape"> </span> 
-                        Tutorial From Top Instructor.</h3>
-                        <p>Meet university,and cultural institutions, who'll share their experience.</p>
+                        <h3 class="hero__title">
+                            <span>From 2700+</span>
+                            <span class="yellow-shape">Online <img src="{{ theme_url('images/yellow-bg.png') }}" alt="yellow-shape"> </span> 
+                            Tutorial Courses
+                        </h3>
+                        <p>With the best instructors, create a profession that is ready for the future. </p>
                         <a href="{{route('courses')}}" class="btn btn-theme-primary">View all course</a>
                     </div>
                 </div>
@@ -83,7 +84,7 @@ $categoriesWithCourses = \App\Category::parent()
 
     </div> --}}
 
-    <div class="dms-box-info-section py-3">
+    {{-- <div class="dms-box-info-section py-3">
         <div class="container">
             <div class="row py-4">
                 <div class="col-md-3 col-xs-12">
@@ -117,19 +118,19 @@ $categoriesWithCourses = \App\Category::parent()
 
             </div>
         </div>
-    </div>
-    {{-- <div class="dms-box-info-section py-5">
+    </div> --}}
+    <div class="dms-box-info-section pb-5">
         <div class="container">
             <div class="row">
                 <div class="col-md-3 col-xs-12">
-                    <div class="home-info-box">
+                    <div class="border-radius-card home-info-box">
                         <img src="{{theme_url('images/skills.svg')}}">
                         <h3 class="info-box-title">Learn the latest skills</h3>
                         <p class="info-box-desc">Digital marketing, Graphics Design, IT and more.</p>
                     </div>
                 </div>
                 <div class="col-md-3 col-xs-12">
-                    <div class="home-info-box">
+                    <div class="border-radius-card home-info-box">
                         <img src="{{theme_url('images/career-goal.svg')}}">
                         <h3 class="info-box-title">Get ready for a career</h3>
                         <p class="info-box-desc">in high-demand fields like IT, AI and cloud engineering</p>
@@ -137,7 +138,7 @@ $categoriesWithCourses = \App\Category::parent()
                 </div>
 
                 <div class="col-md-3 col-xs-12">
-                    <div class="home-info-box">
+                    <div class="border-radius-card home-info-box">
                         <img src="{{theme_url('images/instructions.svg')}}">
                         <h3 class="info-box-title">Expert instruction</h3>
                         <p class="info-box-desc">Every course designed by expert instructor</p>
@@ -145,7 +146,7 @@ $categoriesWithCourses = \App\Category::parent()
                 </div>
 
                 <div class="col-md-3 col-xs-12">
-                    <div class="home-info-box">
+                    <div class="border-radius-card home-info-box">
                         <img src="{{theme_url('images/cartificate.svg')}}">
                         <h3 class="info-box-title">Earn a certificate</h3>
                         <p class="info-box-desc">Get certified upon completing a course</p>
@@ -153,25 +154,21 @@ $categoriesWithCourses = \App\Category::parent()
                 </div>
             </div>
         </div>
-    </div> --}}
+    </div>
 
     {{-- About section --}}
 
-    <div class="home-section-wrap home-info-box-wrapper home-londondms-bg py-5">
+    <div class="home-section-wrap home-info-box-wrapper py-5">
         <div class="container">
             <div class="row">
                 <div class="col-md-5 col-xs-12">
-                    <img class="about-us-img img-responsive" src="{{ theme_url('images/about.webp') }}" />
+                    <img class="border-radius-card about-us-img img-responsive" src="{{ theme_url('images/about.webp') }}" />
                 </div>
                 <div class="col-md-6 col-xs-12">
                     <div class="about-content-wrapper">
                         <h1>About us</h1>
                         <article>
-                            Digital Marketing School offers a wide range of digital marketing, business management, health and social care online courses covering all aspects you need to advance your career. Our programmes are developed by expert instructors who will teach students new skills that can enhance their careers.
-
-                            The student can study our courses online whenever and wherever they are, and it comes with an easy understanding of all lesson details with full support from tutors.
-
-                            As a result, t is a learning opportunity with an advanced level of knowledge and career-focused skills. Digital Marketing School is an online learning platform that connects expert instructors with students in the UK and globally
+                            Digital Marketing School offers a wide range of Digital Marketing, Business Management, Health and Social care online courses covering all aspects you need to advance your career. Our programmes are developed by expert instructors who will teach students new skills that can enhance their careers. The student can study our courses online whenever and wherever they are, and it comes with an easy understanding of all lesson details with full support from tutors. As a result, it is a learning opportunity with an advanced level of knowledge and career-focused skills. Digital Marketing School is an online learning platform that connects expert instructors with students in the UK and globally.
 
                         </article>
                         <a class="londondms-btn" href="#">Read More</a>
@@ -281,7 +278,7 @@ $categoriesWithCourses = \App\Category::parent()
                     <div class="instructor-content-wrap">
                         <h2>Digital Marketing School</h2>
                         <h1>For Business</h1>
-                        <p> Run your online business course under Digital Maretin School London and be part of our family. Get a proffesional support to market your online course. Join our 20+ instructors.</p>
+                        <p> Run your online business course under Digital Marketing School London and be part of our family. Get a proffesional support to market your online course. Join our 20+ instructors.</p>
                         <a href="/instructor-register">Get for business</a>
                     </div>
                 </div>

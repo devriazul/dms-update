@@ -47,7 +47,7 @@ return [
             'driver' => 'mysql',
             'host' => 'localhost',
             'port' => '3306',
-            'database' => 'dms_new',
+            'database' => 'dms',
             'username' => 'root',
             'password' => '',
             'charset' => 'utf8',

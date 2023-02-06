@@ -31,8 +31,8 @@
                 </div>
 
                 <div class="card-info">
-                    <div class="text-value"><h4>{{$wishListed}}</h4></div>
-                    <div>Achivements</div>
+                    <div class="text-value"><h4>{{$my_assignments}}</h4></div>
+                    <div>My Total Assignments</div>
                 </div>
             </div>
         </div>
@@ -44,7 +44,7 @@
                 </div>
 
                 <div class="card-info">
-                    <div class="text-value"><h4>0</h4></div>
+                    <div class="text-value"><h4>{{ $my_certicates }}</h4></div>
                     <div>My Certificate</div>
                 </div>
 
@@ -81,42 +81,31 @@
         <h4 class="mb-4">
             Cousrse Progress
         </h4>
+        @forelse ($get_enroll_courses as $enroll)
+        @php $course = App\Course::where('id',$enroll->course_id)->first(); @endphp
+        <?php if($course){ ?>
         <div class="d-flex">
-            <div class="col-md-4"><p>Diploma in Business ...</p></div>
+            <div class="col-md-4"><p>{{ App\Course::stringSubstr($course->title) }}</p></div>
             <div class="col-md-4">
-                <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 30%;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">30%</div>
+                <div class="progress mt-2">
+                    <div class="progress-bar" role="progressbar" style="width: {{ $course->completed_percent() }}%;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">{{ $course->completed_percent() }}%</div>
                 </div>
             </div>
-            <div class="col-md-4"><a href="">Continue</a></div>
-        </div>
-        <div class="d-flex">
-            <div class="col-md-4"><p>Diploma in Business Inn ...</p></div>
             <div class="col-md-4">
-                <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 70%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">70%</div>
-                </div>
+                @if($course->completed_percent() == 100)
+                <a href="{{ URL::to('preview/certificate/portal/'.$enroll->id) }}" target="_blank" class="btn btn-primary">
+                    <i class="la la-certificate">Preview Certificate</i>
+                </a>
+                @else
+                    <a href="{{route('course', $course->slug)}}">Continue</a>
+                @endif
             </div>
-            <div class="col-md-4"><a href="">Continue</a></div>
         </div>
-        <div class="d-flex">
-            <div class="col-md-4"><p>Level 3 Integrated Diploma</p></div>
-            <div class="col-md-4">
-                <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
-                </div>
-            </div>
-            <div class="col-md-4"><a href="">Completed</a></div>
-        </div>
-        <div class="d-flex">
-            <div class="col-md-4"><p>Level 3 Diploma in Intr ...</p></div>
-            <div class="col-md-4">
-                <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
-                </div>
-            </div>
-            <div class="col-md-4"><a href="">Completed</a></div>
-        </div>
+        <?php } ?>
+        @empty
+        <p>No Enroll Courses found</p>
+        @endforelse
+        
     </div>
 
 
@@ -127,6 +116,27 @@
             <canvas id="ChartArea"></canvas>
         </div>
     @endif --}}
+
+                <!-- Modal -->
+                <div class="modal fade" id="certificate" tabindex="-1" role="dialog" aria-labelledby="certificateModal" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Your Certificate</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>
+                        <div class="modal-body">
+                            <img class="img-fluid" src="{{ theme_url('images/Certificate.png') }}" alt="" srcset="">
+                        </div>
+                        <div class="modal-footer">
+                        {{-- <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button> --}}
+                        <button type="button" class="btn btn-primary">Download</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
 
     <div class="border-radius-card mt-3 p-4 bg-white">
         <h4 class="mb-4"> My Purchase History </h4>
@@ -171,7 +181,7 @@
                             <span class="text-warning" data-toggle="tooltip" title="{!!$purchase->status!!}"><i class="fa fa-exclamation-circle"></i> </span>
                         @endif
 
-                        <a href="{!!route('purchase_view', $purchase->id)!!}" class="btn btn-info"><i class="la la-eye"></i> </a>
+                        <a href="{!!route('purchase_view', $purchase->id)!!}" class="btn btn-primary"><i class="la la-eye"></i> </a>
                     </td>
                 </tr>
             @endforeach
@@ -233,28 +243,28 @@
             new Chart(document.getElementById("doughnut-chart"), {
                 type: 'doughnut',
                 data: {
-                labels: ["Module Released","Module finish on time", "Total Module"],
+                labels: ["Total Enroll Courses","Favourite Courses", "Running Courses"],
                 datasets: [
                     {
                     label: "Population (millions)",
                     backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f"],
-                    data: [90, 70, 100]
+                    data: [{{ $course_module_result }}]
                     }
                 ]
                 },
             });
         </script>
-        <script>
+         <script>
             // Bar chart
             new Chart(document.getElementById("bar-chart"), {
                 type: 'bar',
                 data: {
-                labels: ["August", "September", "October", "November", "December"],
+                labels: ["Quiz1", "Quiz2", "Quiz3", "Quiz4", "Quiz5"],
                 datasets: [
                     {
                     label: "Quiz Marks",
                     backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
-                    data: [100, 90, 80, 70, 0]
+                    data: [{{ $quizzes_score }}]
                     }
                 ]
                 },
@@ -262,7 +272,7 @@
                 legend: { display: false },
                 title: {
                     display: true,
-                    text: 'Month Wise Average Quiz Marks'
+                    text: 'Last 5 Quiz Marks'
                 }
                 }
             });
@@ -273,7 +283,7 @@
             data: {
                 labels: ['A1', 'A2', 'A3', 'A4', 'A5', 'A6', 'A7', 'A8', 'A9', 'A10'],
                 datasets: [{ 
-                    data: [100, 90, 80, 50, 70, 0, 87, 52, 30, 20],
+                    data: [<?php echo $assignment_score; ?>],
                     label: "Assignment Marks",
                     borderColor: "#3e95cd",
                     fill: false

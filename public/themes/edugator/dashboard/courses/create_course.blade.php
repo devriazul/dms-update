@@ -98,6 +98,20 @@
                     </div>
 
                 </div>
+                <div class="form-row my-3">
+                    <div class="col">
+                        <div class="form-group">
+                            <p for="level" class="mr-4">Mandatory</p>
+                            <textarea tabindex="-1" name="mandatory" id="mandatory" class="form-control" rows="6"></textarea>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <p for="level" class="mr-4">Optional</p>
+                            <textarea tabindex="-1" name="optional" id="optional" class="form-control" rows="6"></textarea>
+                        </div>
+                    </div>
+                </div>
 
 
                 <div class="lecture-video-upload-wrap mb-5">
@@ -166,7 +180,13 @@
         </div>
     </div>
 @endsection
-
+@section('page-js')
+    <script src="{{ asset('assets/plugins/ckeditor/ckeditor.js') }}"></script>
+    <script>
+        CKEDITOR.replace( 'mandatory' );
+        CKEDITOR.replace( 'optional' );
+    </script>
+@endsection
 
 @section('page-css')
     <link href="{{ asset('assets/plugins/select2-4.0.3/css/select2.css') }}" rel="stylesheet" />
@@ -176,3 +196,4 @@
     <script src="{{ asset('assets/plugins/select2-4.0.3/js/select2.min.js') }}"></script>
     <script src="{{ asset('assets/js/filemanager.js') }}"></script>
 @endsection
+

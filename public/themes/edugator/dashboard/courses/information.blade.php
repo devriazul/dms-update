@@ -75,6 +75,20 @@
                     </div>
 
                 </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <p for="level" class="mr-4">Mandatory</p>
+                            <textarea tabindex="-1" name="mandatory" id="mandatory" class="form-control" rows="6">{{$course->mandatory}}</textarea>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <p for="level" class="mr-4">Optional</p>
+                            <textarea tabindex="-1" name="optional" id="optional" class="form-control" rows="6">{{$course->optional}}</textarea>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="form-row my-5">
                     <div class="col">
@@ -223,6 +237,7 @@
     <script src="{{ asset('assets/plugins/ckeditor/adapters/jquery.js') }}"></script>
 
     <script>
-        //CKEDITOR.replace( 'description' );
+        CKEDITOR.replace( 'mandatory' );
+        CKEDITOR.replace( 'optional' );
     </script>
 @endsection

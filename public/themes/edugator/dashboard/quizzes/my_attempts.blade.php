@@ -17,21 +17,21 @@
             </tr>
 
             @foreach($attempts as $attempt)
-
+            <?php if($attempt){ ?>
                 <tr>
                     <td>#</td>
                     <td>
                         <p class="mb-3">{{$attempt->user->name}}</p>
 
                         <p class="mb-0 text-muted">
-                            <strong>{{__t('quiz')}} : </strong> <a href="{{$attempt->quiz->url}}">{{$attempt->quiz->title}}</a>
+                            <strong>{{__t('quiz')}} : </strong> <a href="{{ (!empty($attempt->quiz->url))?$attempt->quiz->url:'' }}">{{ (!empty($attempt->quiz->title))?$attempt->quiz->title:'' }}</a>
                         </p>
                         <p class="mb-0 text-muted">
-                            <strong>{{__t('course')}} : </strong> <a href="{{$attempt->course->url}}">{{$attempt->course->title}}</a>
+                            <strong>{{__t('course')}} : </strong> <a href="{{ (!empty($attempt->course->url))?$attempt->course->url:'' }}">{{ (!empty($attempt->course->title))?$attempt->course->title:'' }}</a>
                         </p>
                     </td>
                 </tr>
-
+                <?php } ?>
             @endforeach
 
         </table>

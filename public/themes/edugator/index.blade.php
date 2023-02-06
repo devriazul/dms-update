@@ -14,9 +14,9 @@ $categoriesWithCourses = \App\Category::parent()
 @section('content')
     <section class="hero__area hero__height d-flex align-items-center grey-bg-2 p-relative">
         <div class="hero__shape">
-            <img class="hero-1-circle" src="https://weblearnbd.net/tphtml/educal/educal/assets/img/shape/hero/hero-1-circle.png" alt="">
-            <img class="hero-1-circle-2" src="https://weblearnbd.net/tphtml/educal/educal/assets/img/shape/hero/hero-1-circle-2.png" alt="">
-            <img class="hero-1-dot-2" src="https://weblearnbd.net/tphtml/educal/educal/assets/img/shape/hero/hero-1-dot-2.png" alt="">
+            {{-- <img class="hero-1-circle" src="{{ theme_url('images/hero-slider/hero-1-circle.png') }}" alt=""> --}}
+            <img class="hero-1-circle-2" src="{{ theme_url('images/hero-slider/hero-1-circle-2.png') }}" alt="">
+            <img class="hero-1-dot-2" src="{{ theme_url('images/hero-slider/hero-1-dot-2.png') }}" alt="">
         </div>
         <div class="container">
         <div class="hero__content-wrapper mt-90">
@@ -29,7 +29,8 @@ $categoriesWithCourses = \App\Category::parent()
                             Tutorial Courses
                         </h3>
                         <p>With the best instructors, create a profession that is ready for the future. </p>
-                        <a href="{{route('courses')}}" class="btn btn-theme-primary">View all course</a>
+                        <p><i>Approved center</i> <b class="text-warning">OTHM</b> </p>
+                        <a href="{{route('courses')}}" class="btn btn-theme-primary">Explore courses</a>
                     </div>
                 </div>
                 <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
@@ -472,35 +473,15 @@ $categoriesWithCourses = \App\Category::parent()
                     <h3 class="pt-5">Accreditations</h3>
                     <div class="swiper-container university-carousel">
                         <div class="swiper-wrapper">
-                            {{-- <div class="swiper-slide university-logo">
-                                <img src="{{ theme_url('images/university-logo/canterbury-christ-church-university.jpg') }}"
-                                    alt="">
-                            </div>
-
                             <div class="swiper-slide university-logo">
-                                <img src="{{ theme_url('images/university-logo/global-logo-250x120.jpg') }}" alt="">
+                                <img src="{{ theme_url('images/university-logo/ESFA logo.webp') }}" alt="">
                             </div>
                             <div class="swiper-slide university-logo">
-                                <img src="{{ theme_url('images/university-logo/keele-university.jpg') }}" alt="">
+                                <img src="{{ theme_url('images/university-logo/ICO logo.webp') }}" alt="">
                             </div>
                             <div class="swiper-slide university-logo">
-                                <img src="{{ theme_url('images/university-logo/south-bank-university-250x120.jpg') }}"
-                                    alt="">
+                                <img src="{{ theme_url('images/university-logo/othm logo.webp') }}" alt="">
                             </div>
-                            <div class="swiper-slide university-logo">
-                                <img src="{{ theme_url('images/university-logo/university-of-law.jpg') }}" alt="">
-                            </div>
-                            <div class="swiper-slide university-logo">
-                                <img src="{{ theme_url('images/university-logo/university-of-roehampton-x80.png') }}"
-                                    alt="">
-                            </div>
-                            <div class="swiper-slide university-logo">
-                                <img src="{{ theme_url('images/university-logo/york_st_john_logo-250x120.jpg') }}" alt="">
-                            </div> --}}
-                            <div class="swiper-slide university-logo">
-                                <img src="https://pbs.twimg.com/media/CaTfTjIWAAAJjC0.png" alt="">
-                            </div>
-
                         </div>
                     </div>
 

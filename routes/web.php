@@ -484,6 +484,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
  */
 //Route::get('{slug}', 'PostController@singlePage')->name('page');
 
+Route::get('admission', 'PostController@admissionDashboard')->name('admission');
+Route::get('form', 'PostController@admissionForm')->name('form');
 Route::get('blog/{id?}', 'PostController@blog')->name('blog');
 Route::get('search-blog/{id?}', 'PostController@search_blog')->name('search_blog');
 Route::get('about-us', 'PostController@aboutUs')->name('about');

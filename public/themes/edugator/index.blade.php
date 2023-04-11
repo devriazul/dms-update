@@ -23,12 +23,17 @@ $categoriesWithCourses = \App\Category::parent()
             <div class="row align-items-center">
                 <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
                     <div class="hero__content p-relative z-index-1">
-                        <h3 class="hero__title">
+                        <h1 class="hero__title">
+                            <span>Digital</span>
+                            <span class="yellow-shape">Marketing <img src="{{ theme_url('images/yellow-bg.png') }}" alt="yellow-shape"> </span> 
+                            <br> School
+                        </h1>
+                        {{-- <h3 class="hero__title">
                             <span>From 2700+</span>
                             <span class="yellow-shape">Online <img src="{{ theme_url('images/yellow-bg.png') }}" alt="yellow-shape"> </span> 
                             Tutorial Courses
-                        </h3>
-                        <p>With the best instructors, create a profession that is ready for the future. </p>
+                        </h3> --}}
+                        <p>Invest in yourself and your career with our comprehensive online courses. </p>
                         <p><i>Approved center</i> <b class="text-warning">OTHM</b> </p>
                         <a href="{{route('courses')}}" class="btn btn-theme-primary">Explore courses</a>
                     </div>
@@ -167,7 +172,7 @@ $categoriesWithCourses = \App\Category::parent()
                 </div>
                 <div class="col-md-6 col-xs-12">
                     <div class="about-content-wrapper">
-                        <h1>About us</h1>
+                        <h2>About us</h2>
                         <article>
                             Digital Marketing School offers a wide range of Digital Marketing, Business Management, Health and Social care online courses covering all aspects you need to advance your career. Our programmes are developed by expert instructors who will teach students new skills that can enhance their careers. The student can study our courses online whenever and wherever they are, and it comes with an easy understanding of all lesson details with full support from tutors. As a result, it is a learning opportunity with an advanced level of knowledge and career-focused skills. Digital Marketing School is an online learning platform that connects expert instructors with students in the UK and globally.
 
@@ -278,7 +283,7 @@ $categoriesWithCourses = \App\Category::parent()
                 <div class="col-md-6 col-xs-12">
                     <div class="instructor-content-wrap">
                         <h2>Digital Marketing School</h2>
-                        <h1>For Business</h1>
+                        <h2>For Business</h2>
                         <p> Run your online business course under Digital Marketing School London and be part of our family. Get a proffesional support to market your online course. Join our 20+ instructors.</p>
                         <a href="/instructor-register">Get for business</a>
                     </div>
@@ -436,7 +441,7 @@ $categoriesWithCourses = \App\Category::parent()
             <div class="row">
                 <div class="col-md-6 col-xs-12">
                     <div class="new-era">
-                        <h1>A new era in <br />Online Education</h1>
+                        <h2>A new era in <br />Online Education</h2>
                     </div>
                 </div>
                 <div class="col-md-6 col-xs-12 d-none d-sm-block">
@@ -465,7 +470,7 @@ $categoriesWithCourses = \App\Category::parent()
                     <div class="enroll-box">
                         <h4>Start a Journey</h4>
                         <strong>Enroll Now</strong>
-                        <p>London DMS is an online learning platform that connects instructors with Students globally. instructors create high-quality courses and present them in a super-easy way.</p>
+                        <p>Digital Marketing School is an online learning platform that connects instructors with Students globally. instructors create high-quality courses and present them in a super-easy way.</p>
                         <a href="/topics">Join A Course Now</a>
                     </div>
                 </div>
@@ -481,6 +486,9 @@ $categoriesWithCourses = \App\Category::parent()
                             </div>
                             <div class="swiper-slide university-logo">
                                 <img src="{{ theme_url('images/university-logo/othm logo.webp') }}" alt="">
+                            </div>
+                            <div class="swiper-slide university-logo">
+                                <img src="{{ theme_url('images/university-logo/UKRLP.webp') }}" alt="">
                             </div>
                         </div>
                     </div>

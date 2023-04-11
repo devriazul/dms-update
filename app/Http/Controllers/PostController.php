@@ -430,6 +430,19 @@ class PostController extends Controller
         return view(theme('about'), compact('title'));
     }
 
+    public function admissionDashboard(){
+        
+        $title = 'Admission Dashboard';
+
+        return view(theme('admission'), compact('title'));
+    }
+    public function admissionForm(){
+        
+        $title = 'Admission Form';
+
+        return view(theme('form'), compact('title'));
+    }
+
     public function ourTeam(){
         
         $title = 'Our Team';

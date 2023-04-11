@@ -113,7 +113,7 @@
 @endif
 
 <!-- jquery latest version -->
-<script src="{{asset('assets/js/vendor/jquery-1.12.0.min.js')}}"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <!-- bootstrap js -->
 {{-- <script src="{{asset('assets/js/bootstrap.bundle.min.js')}}"></script> --}}
 
@@ -123,8 +123,15 @@
 
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script src="{{ asset('assets/plugins/select2-4.0.3/js/select2.min.js') }}"></script>
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.13.2/datatables.min.js"></script>
+
+<script>
+  $(document).ready(function () {
+  $('#datatable').DataTable();
+});
+</script>
 
   
 <!-- Initialize Swiper -->

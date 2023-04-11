@@ -37,51 +37,34 @@
     </script>
         <!-- End Google Tag Manager -->
     <meta charset="utf-8">
-    <!-- Meta Pixel Code -->
-    <script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '1886143651721437');
-        fbq('track', 'PageView');
+      <!-- Start of Async Drift Code -->
+      <script>
+        "use strict";
+        
+        !function() {
+          var t = window.driftt = window.drift = window.driftt || [];
+          if (!t.init) {
+            if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
+            t.invoked = !0, t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
+            t.factory = function(e) {
+              return function() {
+                var n = Array.prototype.slice.call(arguments);
+                return n.unshift(e), t.push(n), t;
+              };
+            }, t.methods.forEach(function(e) {
+              t[e] = t.factory(e);
+            }), t.load = function(t) {
+              var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
+              o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
+              var i = document.getElementsByTagName("script")[0];
+              i.parentNode.insertBefore(o, i);
+            };
+          }
+        }();
+        drift.SNIPPET_VERSION = '0.3.1';
+        drift.load('zhgfawugpf4k');
     </script>
-    <!-- Start of Async Drift Code -->
-        <script>
-            "use strict";
-            
-            !function() {
-              var t = window.driftt = window.drift = window.driftt || [];
-              if (!t.init) {
-                if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
-                t.invoked = !0, t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
-                t.factory = function(e) {
-                  return function() {
-                    var n = Array.prototype.slice.call(arguments);
-                    return n.unshift(e), t.push(n), t;
-                  };
-                }, t.methods.forEach(function(e) {
-                  t[e] = t.factory(e);
-                }), t.load = function(t) {
-                  var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
-                  o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
-                  var i = document.getElementsByTagName("script")[0];
-                  i.parentNode.insertBefore(o, i);
-                };
-              }
-            }();
-            drift.SNIPPET_VERSION = '0.3.1';
-            drift.load('zhgfawugpf4k');
-        </script>
-    <!-- End of Async Drift Code -->
-    <noscript><img height="1" width="1" style="display:none"
-        src="https://www.facebook.com/tr?id=1886143651721437&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
+<!-- End of Async Drift Code -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="facebook-domain-verification" content="0qzvdcv0duqfq65vc6d3eggs4rz7fy" />
     
@@ -111,6 +94,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <link rel="stylesheet" href="{{asset('assets/css/line-awesome.min.css')}}">
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+    {{-- DataTable CDN --}}
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.13.2/datatables.min.css"/>
+
     <link
       rel="stylesheet"
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
@@ -137,6 +127,24 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KNLLCNV"
         height="0" width="0" style="display:none;visibility:hidden"></iframe>
     </noscript>
+
+    <!-- Meta Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '237407324024149');
+        fbq('track', 'PageView');
+        </script>
+        <noscript><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=237407324024149&ev=PageView&noscript=1"
+        /></noscript>
+        <!-- End Meta Pixel Code -->
 
 </head>
 
